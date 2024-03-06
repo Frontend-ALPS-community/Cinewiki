@@ -50,10 +50,10 @@ const MovieCarousel: React.FC = () => {
     <div className="w-full bg-yellow-100">
       <div className="mx-auto">
         <Slider ref={sliderRef} {...sliderSettings}>
-          <div className="bg-gray-100 h-[500px] w-[1060px]"> 1 </div>
-          <div className="bg-gray-200 h-[500px] w-[1060px]"> 2 </div>
-          <div className="bg-gray-300 h-[500px] w-[1060px]"> 3 </div>
-          <div className="bg-gray-400 h-[500px] w-[1060px]"> 4 </div>
+          <div className="bg-gray-100 h-[500px] w-[1060px]"> 11 </div>
+          <div className="bg-gray-200 h-[500px] w-[1060px]"> 22 </div>
+          <div className="bg-gray-300 h-[500px] w-[1060px]"> 33 </div>
+          <div className="bg-gray-400 h-[500px] w-[1060px]"> 44 </div>
         </Slider>
       </div>
     </div>

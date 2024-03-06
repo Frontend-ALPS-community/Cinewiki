@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { mergedItem } from '../..'
-import OneCardImage from '../../../../components/Card/Card'
+import OneCardImage from '../../../../components/Card/card'
 
 type ArrowProps = {
   className: string
@@ -58,6 +58,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ content }) => {
           {content.map((animalItem, index) => (
             <div key={index} className="">
               <div className="">
+                카드카드
                 <OneCardImage key={index} />
               </div>
             </div>

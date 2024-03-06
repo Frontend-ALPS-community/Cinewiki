@@ -25,7 +25,7 @@ const OneCardImage: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14v3m0 0v3m0-3h3m-3 0H7" />
             </svg>
-            <span>movie title 자리</span>
+            <span>movie title 자리입니다</span>
             <span>rating 자리</span>
           </div>
         </div>
