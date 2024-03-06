@@ -43,7 +43,7 @@ module.exports = {
     // 컴포넌트 이름은 PascalCase로
     'react/jsx-pascal-case': 'warn',
     // 반복문으로 생성하는 요소에 key 강제
-    'react/jsx-key': 'warn',
+    'react/jsx-key': 'off',
     // 디버그 허용
     'no-debugger': 'off',
     // [error] Delete `␍` prettier/prettier
@@ -71,6 +71,19 @@ module.exports = {
     'no-shadow': 0,
     'jsx-a11y/no-noninteractive-element-interactions': 0,
     '@typescript-eslint/no-var-requires': 'warn',
+    'react/button-has-type': 'off',
+    'react/require-default-props': 'off',
+    'jsx-a11y/alt-text': [0],
+    'jsx-a11y/no-static-element-interactions': [
+      'off',
+      {
+        handlers: ['onClick', 'onMouseDown', 'onMouseUp', 'onKeyPress', 'onKeyDown', 'onKeyUp'],
+        allowExpressionValues: true,
+      },
+    ],
+    'jsx-a11y/click-events-have-key-events': 'off',
+    // key값으로 index를 사용할수 있도록
+    'react/no-array-index-key': 'off',
   },
   settings: {
     'import/resolver': {
