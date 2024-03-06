@@ -1,10 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom'
-
-import Layout from '../components/Layout/layout'
-import Home from '../pages/Home'
+import Upcoming from '../pages/UpComing'
+import Toprated from '../pages/TopRated'
+import ErrorPage from '../pages/Error/ErrorPage'
 import Nowplaying from '../pages/Nowplaying'
-import Toprated from '../pages/Toprated'
-import Upcoming from '../pages/Upcoming'
+import HomePage from '../pages/Home'
+import Layout from '../components/Layout/layout'
 
 const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
-        element: <Home />,
+        element: <HomePage />,
       },
       {
         path: '/nowplaying',
@@ -26,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/toprated',
         element: <Toprated />,
+      },
+      {
+        path: '*',
+        element: <ErrorPage />,
       },
     ],
   },
