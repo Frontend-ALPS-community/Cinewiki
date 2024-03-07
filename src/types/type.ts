@@ -5,10 +5,10 @@ export interface NavBar {
 }
 
 export const Nav: NavBar[] = [
-  { src: '/assets/img/home.png', label: 'home', number: 1 },
-  { src: '/assets/img/fire.png', label: 'Nowplay', number: 2 },
-  { src: '/assets/img/popcorn.png', label: 'Upcoming', number: 3 },
-  { src: '/assets/img/medal.png', label: 'Toprated', number: 4 },
+  { src: '/assets/images/home.png', label: 'home', number: 1 },
+  { src: '/assets/images/fire.png', label: 'Nowplay', number: 2 },
+  { src: '/assets/images/popcorn.png', label: 'Upcoming', number: 3 },
+  { src: '/assets/images/medal.png', label: 'Toprated', number: 4 },
 ]
 
 export interface Page {

@@ -34,7 +34,7 @@ const Layout = () => {
   }
 
   return (
-    <div className="flex">
+    <div className="">
       {/* 딤드 */}
       <AnimatePresence>
         {isOpen && (
@@ -60,23 +60,33 @@ const Layout = () => {
         }}
       >
         {/* 로고 */}
+
         <div className="flex justify-center items-center mt-[30px]">
-          <img
-            onClick={(e) => {
-              onClickBtn(1)
-            }}
-            className="cursor-pointer w-[60px] h-[60px]"
-            src="/assets/img/logo.png"
-          />
-          {isOpen && <motion.div className="text-lg font-bolder ml-[20px]">Cinewiki</motion.div>}
+          {isOpen ? (
+            <img
+              onClick={(e) => {
+                onClickBtn(1)
+              }}
+              className="cursor-pointer w-full h-[60px]"
+              src="assets/images/logofull.png"
+            />
+          ) : (
+            <img
+              onClick={(e) => {
+                onClickBtn(1)
+              }}
+              className="cursor-pointer w-[60px] h-[60px]"
+              src="/assets/images/logo.png"
+            />
+          )}
         </div>
         {/* nav */}
         <div className="flex flex-col items-center">
           <motion.div className="my-8 cursor-pointer h-[30px] flex justify-center">
-            {/* <img className="" src="/assets/img/search.png" /> */}
+            {/* <img className="" src="/assets/images/search.png" /> */}
             {isOpen ? (
               <div className="flex w-full bg-white rounded-xl">
-                <img className="" src="/assets/img/search.png" />
+                <img className="" src="/assets/images/search.png" />
                 <input
                   onClick={(e) => {
                     e.stopPropagation()
@@ -86,12 +96,12 @@ const Layout = () => {
                 />
               </div>
             ) : (
-              <img className="" src="/assets/img/search.png" />
+              <img className="" src="/assets/images/search.png" />
             )}
           </motion.div>
           {Nav.map((item) => (
             <motion.div
-              whileHover={{ scale: 1.3, backgroundColor: '#f7f7f7' }}
+              whileHover={{ scale: 1.3 }}
               whileTap={{ scale: 1 }}
               onClick={(e) => {
                 e.stopPropagation()
@@ -115,11 +125,11 @@ const Layout = () => {
 
           {isOpen ? (
             <motion.div className="cursor-pointer" whileHover={{ scale: 1.3 }} whileTap={{ scale: 1 }}>
-              <img src="/assets/img/left.png" />
+              <img src="/assets/images/left.png" />
             </motion.div>
           ) : (
             <motion.div className="cursor-pointer" whileHover={{ scale: 1.3 }} whileTap={{ scale: 1 }}>
-              <img src="/assets/img/right.png" />
+              <img src="/assets/images/right.png" />
             </motion.div>
           )}
         </div>
