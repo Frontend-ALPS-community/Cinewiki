@@ -1,3 +1,4 @@
+import { getNowPlayData } from '../../apis/query'
 import CardCarousel from './components/CardSlide/CardCarousel'
 import MovieCarousel from './components/MovieSlide/MovieCarousel'
 
@@ -25,8 +26,8 @@ const content: mergedItem[] = [
     photo: 'fish.jpg',
   },
 ]
-
 const HomePage = () => {
+  console.log(getNowPlayData().data?.data)
   return (
     <>
       <div className="w-full flex flex-col m-auto justify-center">
