@@ -1,6 +1,6 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-import { AnimatePresence, motion } from 'framer-motion'
 import { Nav, NavBar } from '../../types/type'
 import UnderLine from '../Underline/underline'
 
@@ -73,6 +73,7 @@ const Layout = () => {
           ) : (
             <img
               onClick={(e) => {
+                e.stopPropagation()
                 onClickBtn(1)
               }}
               className="cursor-pointer w-[60px] h-[60px]"

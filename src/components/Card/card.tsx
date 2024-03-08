@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { resultsType } from '../../types/type'
 
-// interface OneCardImageProps {}
+interface OneCardImageProps {
+  info: resultsType
+}
 
-const OneCardImage: React.FC = () => {
+const OneCardImage: React.FC<OneCardImageProps> = ({ info }) => {
   const [hovered, setHovered] = useState(false)
-
   return (
     <div
       className="w-[160px] h-[240px] relative"
@@ -25,7 +27,7 @@ const OneCardImage: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14v3m0 0v3m0-3h3m-3 0H7" />
             </svg>
-            <span>movie title 자리입니다</span>
+            <span>{info.title}</span>
             <span>rating 자리</span>
           </div>
         </div>

@@ -15,3 +15,12 @@ export interface Page {
   name: string
   desc: string
 }
+
+export interface resultsType {
+  id: string
+  poster_path: string
+  backdrop_path: string
+  release_date: string
+  title: string
+  video: boolean
+}

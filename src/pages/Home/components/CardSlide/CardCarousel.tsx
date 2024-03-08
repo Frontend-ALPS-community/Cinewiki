@@ -3,6 +3,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 import { mergedItem } from '../..'
+import { getNowPlayData } from '../../../../apis/query'
 import OneCardImage from '../../../../components/Card/card'
 
 type ArrowProps = {
@@ -11,6 +12,7 @@ type ArrowProps = {
 }
 
 const NextArrow: React.FC<ArrowProps> = ({ className, onClick }) => {
+  // const data = useQuery<{ results: resultsType[] }>('nowplay')
   return (
     <div
       className={`${className} absolute top-1/2 right-0 -translate-y-1/2 transform cursor-pointer z-10`}
@@ -37,6 +39,7 @@ interface CardCarouselProps {
 }
 
 const CardCarousel: React.FC<CardCarouselProps> = ({ content }) => {
+  const data = getNowPlayData()
   const slickRef = useRef<Slider>(null)
 
   const sliderSettings = {
@@ -59,7 +62,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ content }) => {
             <div key={index} className="">
               <div className="">
                 카드카드
-                <OneCardImage key={index} />
+                <OneCardImage info={data} />
               </div>
             </div>
           ))}

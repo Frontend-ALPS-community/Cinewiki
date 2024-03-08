@@ -84,6 +84,8 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'off',
     // key값으로 index를 사용할수 있도록
     'react/no-array-index-key': 'off',
+    '@typescript-eslint/camelcase': 'off',
+    camelcase: 'off',
   },
   settings: {
     'import/resolver': {
