@@ -28,14 +28,12 @@ const content: mergedItem[] = [
 const HomePage = () => {
   return (
     <>
-      <div className="w-full flex flex-col m-auto justify-center">
-        <MovieCarousel />
-        <div className="flex flex-col justify-center items-center h-[120px] border-b-4">
-          <div className="w-content ">
-            <span className=" text-xl font-bolder">MOVIE TITLE</span>
-          </div>
+      <div className="w-full flex flex-col m-auto justify-center  items-center">
+        <div className="w-content ">
+          <MovieCarousel />
         </div>
       </div>
+      <div className="mt-7 border-b-4" />
 
       <div className="flex justify-center items-center p-4">
         <div className="w-content flex flex-col">

@@ -23,4 +23,5 @@ export interface resultsType {
   release_date: string
   title: string
   video: boolean
+  vote_average: number
 }
