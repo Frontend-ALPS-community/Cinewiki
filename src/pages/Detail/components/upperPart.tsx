@@ -24,7 +24,7 @@ const UpperPart = () => {
             <motion.div
               key={index}
               style={{
-                backgroundImage: `url(/images/${image})`,
+                backgroundImage: `url(/assets/images/${image})`,
                 backgroundSize: 'cover',
                 width: '100%',
                 height: '100%',
@@ -42,7 +42,7 @@ const UpperPart = () => {
       <PlayBtn />
 
       <div className="w-[160px] h-[240px]  rounded-[10px] absolute top-[426px] left-[837px]  bg-gray-100">
-        <img src="/images/img04.png" className=" h-full rounded-[10px]" />
+        <img src="/assets/images/img04.png" className=" h-full rounded-[10px]" />
       </div>
       <div className="mt-[36px] ml-[21px] h-[36px] text-[30px] font-bold ">MOVIE TITLE</div>
       <div className="mt-[34px]">

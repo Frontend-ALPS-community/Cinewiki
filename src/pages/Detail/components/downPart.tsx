@@ -27,7 +27,7 @@ const DownPart = () => {
         <Slider ref={sliderRef} {...settings}>
           {images.map((image, index) => (
             <div key={index} className="w-[160px] h-[210px] mr-[30px]  ">
-              <img className="w-[160px] h-[210px] " src={`/images/${image}`} alt={`castSlide ${index + 1}`} />
+              <img className="w-[160px] h-[210px] " src={`/assets/images/${image}`} alt={`castSlide ${index + 1}`} />
               <div className="w-[160px] h-[24px]   text-center text-[20px] text-gray-300  ">cast name</div>
             </div>
           ))}
