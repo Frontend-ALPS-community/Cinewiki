@@ -2,9 +2,8 @@ import React, { useRef } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import { mergedItem } from '../..'
-import { getNowPlayData } from '../../../../apis/query'
 import OneCardImage from '../../../../components/Card/card'
+import { resultsType } from '../../../../types/type'
 
 type ArrowProps = {
   className: string
@@ -35,11 +34,10 @@ const PrevArrow: React.FC<ArrowProps> = ({ className, onClick }) => {
 }
 
 interface CardCarouselProps {
-  content: mergedItem[]
+  content: resultsType[] // resultsType 객체 배열로 타입 지정
 }
 
 const CardCarousel: React.FC<CardCarouselProps> = ({ content }) => {
-  const data = getNowPlayData()
   const slickRef = useRef<Slider>(null)
 
   const sliderSettings = {
@@ -58,10 +56,10 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ content }) => {
     <div className="w-full flex items-center justify-center py-8">
       <div className="mx-auto w-11/12">
         <Slider {...sliderSettings} ref={slickRef}>
-          {content.map((animalItem, index) => (
+          {content.map((item, index) => (
             <div key={index} className="">
               <div className="">
-                <OneCardImage info={data} />
+                <OneCardImage info={item} />
               </div>
             </div>
           ))}
