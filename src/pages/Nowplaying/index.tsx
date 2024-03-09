@@ -10,11 +10,12 @@ const Nowplaying = () => {
   console.log(data?.results)
 
   data?.results.map((el: resultsType) => console.log(el.video))
+
   return (
-    <div className="bg-subColor-200 w-[1440px] mx-auto">
+    <div className="w-content bg-subColor-200 w-[1440px] mx-auto">
       <div className="text-xl font-bolder mt-16">NowPlaying</div>
       <div className="font-md text-md my-6">현재 상영하는 영화를 확인 할 수 있습니다.</div>
-      <div className="flex flex-wrap mx-auto">
+      <div className="flex flex-wrap gap-3">
         {data?.results.map((info: resultsType) => (
           <OneCardImage info={info} />
         ))}

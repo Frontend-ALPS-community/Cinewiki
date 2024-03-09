@@ -15,7 +15,7 @@ const images = [
 function NextArrow(props: any) {
   const { onClick } = props
   return (
-    <div className="absolute z-10 bg-red-400 right-[-34px]" onClick={onClick}>
+    <div className="absolute translate-y-2/4 z-10 bg-red-400 right-[-34px]" onClick={onClick}>
       <ArrowRightIcon />
     </div>
   )
