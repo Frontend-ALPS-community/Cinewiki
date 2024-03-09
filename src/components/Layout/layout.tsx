@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Nav, NavBar } from '../../types/type'
 import UnderLine from '../Underline/underline'
@@ -11,6 +11,7 @@ const Layout = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false)
   const [selected, setSelected] = useState<NavBar>(Nav[0])
   const [preItem, setPreItem] = useState<NavBar>(Nav[0])
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const onClickBtn = (num: number) => {
     // eslint-disable-next-line default-case
@@ -31,6 +32,13 @@ const Layout = () => {
         navigate('/')
         break
     }
+  }
+
+  const onSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const searchWord = inputRef.current?.value
+    console.log(searchWord)
+    navigate(`/search/${searchWord}`)
   }
 
   return (
@@ -86,7 +94,7 @@ const Layout = () => {
           <motion.div className="my-8 cursor-pointer h-[30px] flex justify-center">
             {/* <img className="" src="/assets/images/search.png" /> */}
             {isOpen ? (
-              <div className="flex w-full bg-white rounded-xl">
+              <form onSubmit={onSearch} className="flex w-full bg-white rounded-xl">
                 <img className="" src="/assets/images/search.png" />
                 <input
                   onClick={(e) => {
@@ -94,8 +102,9 @@ const Layout = () => {
                   }}
                   className="px-3 py-2 placeholder-gray text-gray-900 bg-white border-none focus:outline-none"
                   placeholder="search"
+                  ref={inputRef}
                 />
-              </div>
+              </form>
             ) : (
               <img className="" src="/assets/images/search.png" />
             )}

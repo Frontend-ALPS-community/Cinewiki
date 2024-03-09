@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import GoBackBtn from '../../../components/Buttons/goBackBtn'
 import PlayBtn from '../../../components/Buttons/playBtn'
 
@@ -7,6 +8,7 @@ const UpperPart = () => {
   const images = ['img01.png', 'img02.png', 'img03.png']
   const transition = { duration: 0.5, ease: 'easeInOut' }
   const [currentIndex, setCurrentIndex] = useState(0)
+  const { id } = useParams()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,7 +46,7 @@ const UpperPart = () => {
       <div className="w-[160px] h-[240px]  rounded-[10px] absolute top-[426px] left-[837px]  bg-gray-100">
         <img src="/assets/images/img04.png" className=" h-full rounded-[10px]" />
       </div>
-      <div className="mt-[36px] ml-[21px] h-[36px] text-[30px] font-bold ">MOVIE TITLE</div>
+      <div className="mt-[36px] ml-[21px] h-[36px] text-[30px] font-bold ">{id}</div>
       <div className="mt-[34px]">
         <span className="ml-[9px] rounded-[5px] p-[10px] mr-[30px]  text-[20px] text-center border-2 border-black bg-white">
           ⭐ 9.7

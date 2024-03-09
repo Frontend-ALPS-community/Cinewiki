@@ -6,6 +6,7 @@ import HomePage from '../pages/Home'
 import Nowplaying from '../pages/Nowplaying'
 import Toprated from '../pages/Toprated'
 import Upcoming from '../pages/Upcoming'
+import SearchResultPage from '../pages/Search/SearchResult'
 
 const router = createBrowserRouter([
   {
@@ -29,8 +30,12 @@ const router = createBrowserRouter([
         element: <Toprated />,
       },
       {
-        path: '/detail',
+        path: '/detail/:id',
         element: <DetailPage />,
+      },
+      {
+        path: '/search/:word',
+        element: <SearchResultPage />,
       },
       {
         path: '*',
