@@ -9,7 +9,7 @@ const OneCardImage: React.FC<OneCardImageProps> = ({ info }) => {
   const [hovered, setHovered] = useState(false)
   return (
     <div
-      className="w-[160px] h-[240px] relative"
+      className="w-[160px] h-[240px] relative bg-gray-100"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

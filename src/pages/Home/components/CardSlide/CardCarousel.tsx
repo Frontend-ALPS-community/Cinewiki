@@ -61,7 +61,6 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ content }) => {
           {content.map((animalItem, index) => (
             <div key={index} className="">
               <div className="">
-                카드카드
                 <OneCardImage info={data} />
               </div>
             </div>
