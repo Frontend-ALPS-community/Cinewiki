@@ -4,7 +4,6 @@ import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 import { mergedItem } from '../..'
 import { getNowPlayData } from '../../../../apis/query'
-import OneCardImage from '../../../../components/Card/card'
 
 type ArrowProps = {
   className: string
@@ -60,9 +59,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ content }) => {
         <Slider {...sliderSettings} ref={slickRef}>
           {content.map((animalItem, index) => (
             <div key={index} className="">
-              <div className="">
-                <OneCardImage info={data} />
-              </div>
+              <div className="">{/* <OneCardImage info={data} /> */}</div>
             </div>
           ))}
         </Slider>

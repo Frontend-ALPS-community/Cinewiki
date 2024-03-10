@@ -9,8 +9,6 @@ interface OneCardImageProps {
 const OneCardImage: React.FC<OneCardImageProps> = ({ info }) => {
   const [hovered, setHovered] = useState(false)
 
-  console.log('info?', info)
-
   return (
     <div
       className="w-[160px] h-[240px] relative bg-gray-100 rounded-lg"
