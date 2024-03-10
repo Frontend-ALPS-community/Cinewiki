@@ -7,7 +7,7 @@ interface OneCardImageProps {
   info: resultsType
 }
 
-const IMG_BASE_URL = IMAGE_URL(1030)
+const IMG_BASE_URL = IMAGE_URL(300)
 
 const OneCardImage: React.FC<OneCardImageProps> = ({ info }) => {
   const [hovered, setHovered] = useState(false)
