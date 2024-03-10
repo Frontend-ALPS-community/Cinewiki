@@ -1,11 +1,6 @@
-import { getNowPlayData } from '../../apis/query'
 import MovieCarousel from './components/MovieSlide/MovieCarousel'
 
 const HomePage = () => {
-  const nowPlaying = getNowPlayData()
-
-  console.log('?', nowPlaying?.results)
-
   return (
     <>
       <div className="w-full flex flex-col m-auto justify-center  items-center">

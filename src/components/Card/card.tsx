@@ -12,8 +12,6 @@ const IMG_BASE_URL = IMAGE_URL(300)
 const OneCardImage: React.FC<OneCardImageProps> = ({ info }) => {
   const [hovered, setHovered] = useState(false)
 
-  console.log('info?', info)
-
   return (
     <div
       className="w-[160px] h-[240px] relative bg-gray-100 rounded-lg"

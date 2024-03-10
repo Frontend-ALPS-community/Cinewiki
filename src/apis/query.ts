@@ -1,13 +1,18 @@
-import { useQuery } from '@tanstack/react-query'
+import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
+import { fetchType } from '../types/type'
 import { Axios } from './@core'
 
 const nowplay = '/now_playing'
 const toprated = '/top_rated'
 const upcoming = '/upcoming'
 
-export const AxiosGetNow = async () => {
+export const AxiosGetNow = async (params: any) => {
   // eslint-disable-next-line no-return-await
-  const res = await Axios.get(nowplay)
+  const res = await Axios.get(nowplay, {
+    params: {
+      page: params,
+    },
+  })
   return res.data
 }
 const AxiosGetToprated = async () => {
@@ -23,9 +28,16 @@ const AxiosGetUpcoming = async () => {
 
 export const getNowPlayData = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { data } = useQuery({
+  const data = useInfiniteQuery<fetchType>({
     queryKey: ['nowplay'],
-    queryFn: AxiosGetNow,
+    queryFn: ({ pageParam = 1 }) => AxiosGetNow(pageParam),
+    getNextPageParam: (lastPage, allPages) => {
+      //   console.log(lastPage)
+      //   console.log(allPages)
+      // 다음 페이지 번호 반환
+      return allPages.length + 1
+    },
+    initialPageParam: 1,
   })
   return data
 }

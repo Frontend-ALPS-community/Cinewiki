@@ -11,7 +11,6 @@ type ArrowProps = {
 }
 
 const NextArrow: React.FC<ArrowProps> = ({ className, onClick }) => {
-  // const data = useQuery<{ results: resultsType[] }>('nowplay')
   return (
     <div
       className={`${className} absolute top-1/2 right-0 -translate-y-1/2 transform cursor-pointer z-10`}
