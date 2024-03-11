@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <>
       <div className="w-full flex flex-col m-auto justify-center items-center bg-gray-100">
-        <div className="w-content">
+        <div className="w-full max-w-[1920px]">
           <HomeBanner />
         </div>
       </div>

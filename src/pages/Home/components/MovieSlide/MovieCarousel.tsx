@@ -6,6 +6,7 @@ import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
 import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
 import { IMAGE_URL } from '../../../../utils/ImageURL'
 import { resultsType } from '../../../../types/type'
+import PlayBtn from '../../../../components/Buttons/playBtn'
 
 interface MovieCarouselProps {
   images: resultsType[] | undefined
@@ -15,10 +16,7 @@ function NextArrow(props: any) {
   const { onClick } = props
 
   return (
-    <div
-      className="absolute rounded p-3 translate-y-2/4 z-10 bg-white border-solid right-[30px] bottom-[20%]"
-      onClick={onClick}
-    >
+    <div className="absolute rounded p-3 z-10 bg-white border-solid right-[30px] top-[78%]" onClick={onClick}>
       <ArrowRightIcon />
     </div>
   )
@@ -27,7 +25,7 @@ function NextArrow(props: any) {
 function PrevArrow(props: any) {
   const { onClick } = props
   return (
-    <div className="absolute z-10 rounded p-3 bg-white border-solid right-[90px] top-[76%]" onClick={onClick}>
+    <div className="absolute z-10 rounded p-3 bg-white border-solid right-[90px] top-[78%]" onClick={onClick}>
       <ArrowLeftIcon />
     </div>
   )
@@ -45,19 +43,25 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    // className: 'center',
+    // centerMode: true,
+    // centerPadding: '200px',
   }
 
   return (
-    <div className="relative mx-auto w-full bg-yellow-100">
+    <div className="relative mx-auto w-content bg-yellow-100">
       <div className="mx-auto">
         <Slider {...settings}>
           {images?.map((image) => (
-            <>
-              <div className="flex align-center justify-center">
-                <img src={IMG_BASE_URL + image.backdrop_path} />
+            <div className="flex align-center justify-center mx-auto">
+              <div className="flex align-center justify-center mx-auto">
+                <img src={IMG_BASE_URL + image.backdrop_path} className="w-content" />
               </div>
-              <div className="m-4 text-xl font-bolder">{image.title}</div>
-            </>
+              <div className="absolute top-7 z-10">
+                <PlayBtn />
+              </div>
+              <div className="text-center mx-auto w-content m-4 text-xl font-bolder">{image.title}</div>
+            </div>
           ))}
         </Slider>
       </div>
