@@ -4,7 +4,7 @@ import HomeCardGroup from './components/homeCardGroup'
 const HomePage = () => {
   return (
     <>
-      <div className="w-full flex flex-col m-auto justify-center items-center bg-yellow-100">
+      <div className="w-full flex flex-col m-auto justify-center items-center bg-gray-100">
         <div className="w-content">
           <HomeBanner />
         </div>

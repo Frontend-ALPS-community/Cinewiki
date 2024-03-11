@@ -14,12 +14,8 @@ const OneCardImage: React.FC<OneCardImageProps> = ({ info }) => {
   const [hovered, setHovered] = useState(false)
 
   return (
-    <Link to={`/detail/${info.id}`}>
-      <div
-        className="w-[160px] h-[240px] relative bg-gray-100 rounded-lg"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
+    <Link to={`/detail/${info.id}`} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+      <div className="w-[160px] h-[240px] relative bg-gray-100 rounded-lg">
         <img
           alt="i"
           src={info.poster_path ? IMG_BASE_URL + info.poster_path : '/assets/images/backdrop.png'}

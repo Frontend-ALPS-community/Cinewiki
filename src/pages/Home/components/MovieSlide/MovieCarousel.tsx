@@ -13,6 +13,7 @@ interface MovieCarouselProps {
 
 function NextArrow(props: any) {
   const { onClick } = props
+
   return (
     <div
       className="absolute rounded p-3 translate-y-2/4 z-10 bg-white border-solid right-[30px] bottom-[20%]"
@@ -38,6 +39,7 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
   const settings = {
     dots: false,
     infinite: true,
+    autoplay: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -51,7 +53,7 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
         <Slider {...settings}>
           {images?.map((image) => (
             <>
-              <div>
+              <div className="flex align-center justify-center">
                 <img src={IMG_BASE_URL + image.backdrop_path} />
               </div>
               <div className="m-4 text-xl font-bolder">{image.title}</div>
