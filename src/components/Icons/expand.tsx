@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ExpandWide = ({ height = 30, width = 30 }: { width?: number; height?: number }) => (
+export const ExpandWide = ({ height = 35, width = 35 }: { width?: number; height?: number }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
