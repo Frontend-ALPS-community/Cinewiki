@@ -12,6 +12,8 @@ const Nowplaying = () => {
   const { data } = res
   const [ref, inView] = useInView()
 
+  console.log('data', data)
+
   useEffect(() => {
     // eslint-disable-next-line no-empty
     if (!inView) {

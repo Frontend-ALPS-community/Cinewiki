@@ -1,17 +1,20 @@
-import MovieCarousel from './components/MovieSlide/MovieCarousel'
+import HomeBanner from './components/homeBanner'
+import HomeCardGroup from './components/homeCardGroup'
 
 const HomePage = () => {
   return (
     <>
-      <div className="w-full flex flex-col m-auto justify-center  items-center">
-        <div className="w-content ">
-          <MovieCarousel />
+      <div className="w-full flex flex-col m-auto justify-center items-center bg-yellow-100">
+        <div className="w-content">
+          <HomeBanner />
         </div>
       </div>
       <div className="mt-7 border-b-4" />
 
       <div className="flex justify-center items-center p-4">
-        <div className="w-content flex flex-col" />
+        <div className="w-content flex flex-col">
+          <HomeCardGroup />
+        </div>
       </div>
     </>
   )
