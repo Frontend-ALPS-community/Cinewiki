@@ -12,6 +12,8 @@ const Nowplaying = () => {
   const { data } = res
   const [ref, inView] = useInView()
 
+  console.log('data', data)
+
   useEffect(() => {
     // eslint-disable-next-line no-empty
     if (!inView) {
@@ -20,10 +22,10 @@ const Nowplaying = () => {
   }, [inView])
 
   return (
-    <div className="w-content bg-subColor-200 w-[1440px] mx-auto">
+    <div className="w-content w-[1440px] mx-auto">
       <div className="text-xl font-bolder mt-16">NowPlaying</div>
       <div className="font-md text-md my-6">현재 상영하는 영화를 확인 할 수 있습니다.</div>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-3 mx-auto">
         {data?.pages.map((page) => page.results.map((info: resultsType) => <OneCardImage info={info} />))}
       </div>
       <div ref={ref} />
