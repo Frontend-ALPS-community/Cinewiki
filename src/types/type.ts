@@ -25,3 +25,8 @@ export interface resultsType {
   video: boolean
   vote_average: number
 }
+
+export interface fetchType {
+  page: number
+  results: resultsType[]
+}
