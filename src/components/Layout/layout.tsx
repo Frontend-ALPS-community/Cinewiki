@@ -48,7 +48,7 @@ const Layout = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="bg-black fixed w-full h-full z-10"
+            className="bg-black fixed w-full h-full z-30 top-0"
             initial={{ opacity: '0' }}
             animate={{ opacity: 0.6 }}
             exit={{ opacity: 0 }}
@@ -58,7 +58,7 @@ const Layout = () => {
       </AnimatePresence>
 
       <motion.div
-        className="bg-primary-100 h-screen fixed top-0 z-30"
+        className="bg-primary-100 h-screen fixed top-0 z-40"
         layout
         initial={{ width: '122px' }}
         transition={{ duration: 0.3 }}
