@@ -1,3 +1,5 @@
+import { InfiniteData, UseInfiniteQueryResult } from '@tanstack/react-query'
+
 export interface NavBar {
   label: string
   src: string
@@ -14,6 +16,7 @@ export const Nav: NavBar[] = [
 export interface Page {
   name: string
   desc: string
+  getData: () => UseInfiniteQueryResult<InfiniteData<any, unknown>, Error>
 }
 
 export interface resultsType {
