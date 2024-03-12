@@ -1,9 +1,11 @@
-import { useInfiniteQuery } from '@tanstack/react-query'
+import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
 import { Axios } from './@core'
 
-const nowplay = '/now_playing'
-const toprated = '/top_rated'
-const upcoming = '/upcoming'
+const nowplay = '/movie/now_playing'
+const toprated = '/movie/top_rated'
+const upcoming = '/movie/upcoming'
+const search = '/search/movie'
+const detail = '/movie'
 
 export const AxiosGetNow = async (params: any) => {
   // eslint-disable-next-line no-return-await
@@ -30,6 +32,24 @@ const AxiosGetUpcoming = async (params: any) => {
       page: params,
     },
   })
+  return res.data
+}
+
+const AxiosGetSearch = async (queryKey: string[], word: string, page: number) => {
+  const res = await Axios.get(search, {
+    params: { query: word, page },
+  })
+  return res.data
+}
+
+const AxiosGetDetail = async (id: number) => {
+  const res = await Axios.get(`${detail}/${id}`)
+
+  return res.data
+}
+const AxiosGetImages = async (id: number) => {
+  const res = await Axios.get(`${detail}/${id}/images`)
+
   return res.data
 }
 
@@ -71,4 +91,29 @@ export const getUpcomingData = () => {
     initialPageParam: 1,
   })
   return data
+}
+
+export const useSearchMovies = (word: string, page: number) => {
+  // 검색 키워드를 인수로 받음
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['search'],
+    queryFn: () => AxiosGetSearch(['search'], word, page),
+  })
+
+  return { data, isLoading, error }
+}
+export const useMovieDetail = (id: number) => {
+  const data = useQuery({
+    queryKey: ['detail'],
+    queryFn: () => AxiosGetDetail(id),
+  })
+  return data
+}
+
+export const useMovieImage = (id: number) => {
+  const images: any = useQuery({
+    queryKey: ['image'],
+    queryFn: () => AxiosGetImages(id),
+  })
+  return images
 }

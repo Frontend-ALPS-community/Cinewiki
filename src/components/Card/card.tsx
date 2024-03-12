@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { resultsType } from '../../types/type'
-import { ExpandWide } from '../Icons/expand'
 import { IMAGE_URL } from '../../utils/ImageURL'
+import { ExpandWide } from '../Icons/expand'
 
 interface OneCardImageProps {
   info: resultsType

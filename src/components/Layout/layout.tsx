@@ -38,7 +38,6 @@ const Layout = () => {
   const onSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const searchWord = inputRef.current?.value
-    console.log(searchWord)
     navigate(`/search/${searchWord}`)
   }
 
