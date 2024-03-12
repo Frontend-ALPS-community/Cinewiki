@@ -1,17 +1,10 @@
-import { getNowPlayData, getTopratedData, getUpcomingData } from '../../../apis/query'
+import { getData } from '../../../utils/getData'
 import CardCarousel from './CardSlide/CardCarousel'
 
 const HomeCardGroup = () => {
-  const res = getNowPlayData()
-  const { data: nowPlayingdata } = res
-  const nowPlaying = nowPlayingdata?.pages.flatMap((page) => page.results)
-
-  const topRatedQuery = getTopratedData()
-  const upcomingQuery = getUpcomingData()
-
-  const topRated = topRatedQuery && topRatedQuery.results
-  const upComing = topRatedQuery && upcomingQuery.results
-
+  const nowPlaying = getData('nowplay')
+  const topRated = getData('toprated')
+  const upComing = getData('upcoming')
   return (
     <div>
       <div className="text-big font-bold mt-[50px] ml-5">Now Playing</div>

@@ -2,8 +2,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Nav, NavBar } from '../../types/type'
-import UnderLine from '../Underline/underline'
 import { Search } from '../Icons/search'
+import UnderLine from '../Underline/underline'
 
 const Layout = () => {
   // 조건부스타일
@@ -47,16 +47,17 @@ const Layout = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="bg-black fixed w-full h-full z-10"
+            className="bg-black fixed w-full h-full z-30 top-0"
             initial={{ opacity: '0' }}
             animate={{ opacity: 0.6 }}
             exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
           />
         )}
       </AnimatePresence>
 
       <motion.div
-        className="bg-primary-100 h-screen fixed top-0 z-30"
+        className="bg-primary-100 h-screen fixed top-0 z-40"
         layout
         initial={{ width: '122px' }}
         transition={{ duration: 0.3 }}
@@ -74,6 +75,7 @@ const Layout = () => {
             <img
               onClick={(e) => {
                 onClickBtn(1)
+                setSelected(Nav[0])
               }}
               className="cursor-pointer w-full max-w-[245px] h-[103px]"
               src="/assets/images/logofull.png"
