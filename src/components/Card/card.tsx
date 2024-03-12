@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { resultsType } from '../../types/type'
 import { ExpandWide } from '../Icons/expand'
 
@@ -8,12 +9,18 @@ interface OneCardImageProps {
 
 const OneCardImage: React.FC<OneCardImageProps> = ({ info }) => {
   const [hovered, setHovered] = useState(false)
+  const navigate = useNavigate()
+
+  const onClickCard = () => {
+    navigate(`/detail/${info.id}`)
+  }
 
   return (
     <div
       className="w-[160px] h-[240px] relative bg-gray-100 rounded-lg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={() => onClickCard()}
     >
       <img alt="i" className="w-[160px] h-[240px] rounded-lg object-fill" />
       {hovered && (

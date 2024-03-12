@@ -6,6 +6,7 @@ const nowplay = '/movie/now_playing'
 const toprated = '/movie/top_rated'
 const upcoming = '/movie/upcoming'
 const search = '/search/movie'
+const detail = '/movie'
 
 export const AxiosGetNow = async (params: any) => {
   // eslint-disable-next-line no-return-await
@@ -31,6 +32,12 @@ const AxiosGetSearch = async (queryKey: string[], word: string, page: number) =>
   const res = await Axios.get(search, {
     params: { query: word, page },
   })
+  return res.data
+}
+
+const AxiosGetDetail = async (id: number) => {
+  const res = await Axios.get(`${detail}/${id}`)
+
   return res.data
 }
 
@@ -73,5 +80,12 @@ export const useSearchMovies = (word: string, page: number) => {
     queryFn: () => AxiosGetSearch(['search'], word, page),
   })
 
+  return { data, isLoading, error }
+}
+export const useMovieDetail = (id: number) => {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['detail'],
+    queryFn: () => AxiosGetDetail(id),
+  })
   return { data, isLoading, error }
 }

@@ -1,15 +1,15 @@
-import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import GoBackBtn from '../../../components/Buttons/goBackBtn'
 import PlayBtn from '../../../components/Buttons/playBtn'
 
-const UpperPart = () => {
+const UpperPart = (data: any) => {
   const images = ['img01.png', 'img02.png', 'img03.png']
   const transition = { duration: 0.5, ease: 'easeInOut' }
   const [currentIndex, setCurrentIndex] = useState(0)
   const { id } = useParams()
-
+  const baseURL = `https://image.tmdb.org/t/p/w1280`
+  console.log(data)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex: any) => (prevIndex + 1) % images.length)
@@ -20,13 +20,13 @@ const UpperPart = () => {
     <div className="pt-[36px] relative  w-[1060px]  bg-yellow-200 mx-auto ">
       <GoBackBtn />
 
-      <div className="w=[1057px] h-[457px] overflow-hidden">
-        <AnimatePresence mode="wait">
+      <div className="w=[1057px] h-[457px] overflow-hidden ">
+        {/* <AnimatePresence mode="popLayout">
           {images.map((image, index) => (
             <motion.div
               key={index}
               style={{
-                backgroundImage: `url(/assets/images/${image})`,
+                backgroundImage: `url${baseURL}/${data?.data.backdrop_path}`,
                 backgroundSize: 'cover',
                 width: '100%',
                 height: '100%',
@@ -38,7 +38,7 @@ const UpperPart = () => {
               transition={transition}
             />
           ))}
-        </AnimatePresence>
+        </AnimatePresence> */}
       </div>
 
       <PlayBtn />
