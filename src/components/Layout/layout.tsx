@@ -3,6 +3,7 @@ import { useRef, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Nav, NavBar } from '../../types/type'
 import UnderLine from '../Underline/underline'
+import { Search } from '../Icons/search'
 
 const Layout = () => {
   // 조건부스타일
@@ -46,7 +47,7 @@ const Layout = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="bg-black fixed w-full h-full"
+            className="bg-black fixed w-full h-full z-10"
             initial={{ opacity: '0' }}
             animate={{ opacity: 0.6 }}
             exit={{ opacity: 0 }}
@@ -59,7 +60,7 @@ const Layout = () => {
         layout
         initial={{ width: '122px' }}
         transition={{ duration: 0.3 }}
-        animate={{ width: isOpen ? '240px' : '122px' }}
+        animate={{ width: isOpen ? '330px' : '122px' }}
         onHoverStart={() => setIsHovered(!isHovered)}
         onHoverEnd={() => setIsHovered(!isHovered)}
         onClick={() => {
@@ -74,8 +75,8 @@ const Layout = () => {
               onClick={(e) => {
                 onClickBtn(1)
               }}
-              className="cursor-pointer w-full h-[60px]"
-              src="assets/images/logofull.png"
+              className="cursor-pointer w-full max-w-[245px] h-[103px]"
+              src="/assets/images/logofull.png"
             />
           ) : (
             <img
@@ -91,21 +92,20 @@ const Layout = () => {
         {/* nav */}
         <div className="flex flex-col items-center">
           <motion.div className="my-8 cursor-pointer h-[30px] flex justify-center">
-            {/* <img className="" src="/assets/images/search.png" /> */}
             {isOpen ? (
-              <form onSubmit={onSearch} className="flex w-full bg-white rounded-xl">
-                <img className="" src="/assets/images/search.png" />
+              <form onSubmit={onSearch} className="flex w-full bg-white rounded-lg">
+                <img className="pl-2" src="/assets/images/search.png" />
                 <input
                   onClick={(e) => {
                     e.stopPropagation()
                   }}
-                  className="px-3 py-2 placeholder-gray text-gray-900 bg-white border-none focus:outline-none"
+                  className="p-2 placeholder-gray text-gray-900 bg-white border-none focus:outline-none"
                   placeholder="search"
                   ref={inputRef}
                 />
               </form>
             ) : (
-              <img className="" src="/assets/images/search.png" />
+              <Search />
             )}
           </motion.div>
           {Nav.map((item) => (

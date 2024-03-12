@@ -1,17 +1,18 @@
 import React from 'react'
 
-export const ExpandWide = ({ height = 35, width = 35 }: { width?: number; height?: number }) => (
+export const Home = ({ height = 60, width = 60 }: { width?: number; height?: number }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
     height={height}
     viewBox="0 0 24 24"
     fill="none"
-    stroke="white"
+    stroke="#000000"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M3.8 3.8l16.4 16.4M20.2 3.8L3.8 20.2M15 3h6v6M9 3H3v6M15 21h6v-6M9 21H3v-6" />
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+    <polyline points="9 22 9 12 15 12 15 22" />
   </svg>
 )

@@ -40,6 +40,11 @@ const AxiosGetDetail = async (id: number) => {
 
   return res.data
 }
+const AxiosGetImages = async (id: number) => {
+  const res = await Axios.get(`${detail}/${id}/images`)
+
+  return res.data
+}
 
 export const getNowPlayData = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -83,9 +88,17 @@ export const useSearchMovies = (word: string, page: number) => {
   return { data, isLoading, error }
 }
 export const useMovieDetail = (id: number) => {
-  const { data, isLoading, error } = useQuery({
+  const data = useQuery({
     queryKey: ['detail'],
     queryFn: () => AxiosGetDetail(id),
   })
-  return { data, isLoading, error }
+  return data
+}
+
+export const useMovieImage = (id: number) => {
+  const images: any = useQuery({
+    queryKey: ['image'],
+    queryFn: () => AxiosGetImages(id),
+  })
+  return images
 }

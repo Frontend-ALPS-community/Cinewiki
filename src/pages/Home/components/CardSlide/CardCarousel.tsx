@@ -2,52 +2,42 @@ import React, { useRef } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import { mergedItem } from '../..'
-import { getNowPlayData } from '../../../../apis/query'
+import OneCardImage from '../../../../components/Card/card'
+import { resultsType } from '../../../../types/type'
+import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
+import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
 
-type ArrowProps = {
-  className: string
-  onClick: () => void
-}
+function NextArrow(props: any) {
+  const { onClick } = props
 
-const NextArrow: React.FC<ArrowProps> = ({ className, onClick }) => {
-  // const data = useQuery<{ results: resultsType[] }>('nowplay')
   return (
-    <div
-      className={`${className} absolute top-1/2 right-0 -translate-y-1/2 transform cursor-pointer z-10`}
-      onClick={onClick}
-    >
-      <img src="/icon/right-arrow.png" className="bg-transparent filter hover:invert" />
+    <div className="absolute z-10 rounded-full p-3 bg-gray-100 top-[40%] right-[-60px]" onClick={onClick}>
+      <ArrowRightIcon />
     </div>
   )
 }
 
-const PrevArrow: React.FC<ArrowProps> = ({ className, onClick }) => {
+function PrevArrow(props: any) {
+  const { onClick } = props
   return (
-    <div
-      className={`${className} absolute top-1/2 left-0 -translate-y-1/2 transform cursor-pointer z-10`}
-      onClick={onClick}
-    >
-      <img src="/icon/left-arrow.png" className="bg-transparent filter hover:invert" />
+    <div className="absolute z-10 rounded-full p-3 bg-gray-100 top-[40%] left-[-60px]" onClick={onClick}>
+      <ArrowLeftIcon />
     </div>
   )
 }
-
 interface CardCarouselProps {
-  content: mergedItem[]
+  content: resultsType[] // resultsType 객체 배열로 타입 지정필요함
 }
 
 const CardCarousel: React.FC<CardCarouselProps> = ({ content }) => {
-  const data = getNowPlayData()
   const slickRef = useRef<Slider>(null)
 
   const sliderSettings = {
     dots: false,
     infinite: true,
     speed: 500,
-    arrows: true,
-    nextArrow: <NextArrow onClick={() => slickRef.current?.slickNext()} className="" />,
-    prevArrow: <PrevArrow onClick={() => slickRef.current?.slickPrev()} className="" />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: false,
@@ -57,9 +47,11 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ content }) => {
     <div className="w-full flex items-center justify-center py-8">
       <div className="mx-auto w-11/12">
         <Slider {...sliderSettings} ref={slickRef}>
-          {content.map((animalItem, index) => (
+          {content.map((item, index) => (
             <div key={index} className="">
-              <div className="">{/* <OneCardImage info={data} /> */}</div>
+              <div className="">
+                <OneCardImage info={item} />
+              </div>
             </div>
           ))}
         </Slider>
