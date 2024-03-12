@@ -35,7 +35,7 @@ const AxiosGetUpcoming = async (params: any) => {
   return res.data
 }
 
-const AxiosGetSearch = async (queryKey: string[], word: string, page: number) => {
+const AxiosGetSearch = async (word: string | undefined, page: number) => {
   const res = await Axios.get(search, {
     params: { query: word, page },
   })
@@ -93,14 +93,20 @@ export const getUpcomingData = () => {
   return data
 }
 
-export const useSearchMovies = (word: string, page: number) => {
+export const getSearchData = (word: string | undefined) => {
   // 검색 키워드를 인수로 받음
-  const { data, isLoading, error } = useQuery({
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const data = useInfiniteQuery({
     queryKey: ['search'],
-    queryFn: () => AxiosGetSearch(['search'], word, page),
+    queryFn: ({ pageParam = 1 }) => AxiosGetSearch(word, pageParam),
+    getNextPageParam: (lastPage, allPages) => {
+      // 다음 페이지 번호 반환
+      return allPages.length + 1
+    },
+    initialPageParam: 1,
   })
 
-  return { data, isLoading, error }
+  return data
 }
 export const useMovieDetail = (id: number) => {
   const data = useQuery({

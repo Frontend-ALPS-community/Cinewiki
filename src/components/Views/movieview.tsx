@@ -1,12 +1,18 @@
 import React, { useEffect } from 'react'
 
 import { useInView } from 'react-intersection-observer'
+import { useRecoilValue } from 'recoil'
+import { search } from '../../atoms/searchAtom'
 import { Page, resultsType } from '../../types/type'
 import OneCardImage from '../Card/card'
 
-const MovieView: React.FC<Page> = ({ name, desc, getData }) => {
-  const res = getData()
+const MovieView: React.FC<Page> = ({ name, desc, getData, word }) => {
+  const searchWord = useRecoilValue(search)
+
+  // const res = word ? getData(word) : getData()
+  const res = word ? getData(searchWord) : getData()
   const { data } = res
+  console.log(data?.pages)
   const [ref, inView] = useInView()
   useEffect(() => {
     // eslint-disable-next-line no-empty

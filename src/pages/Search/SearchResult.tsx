@@ -1,33 +1,21 @@
-import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useSearchMovies } from '../../apis/query'
-import OneCardImage from '../../components/Card/card'
-import { resultsType } from '../../types/type'
+import { useRecoilValue } from 'recoil'
+import { getSearchData } from '../../apis/query'
+import { search } from '../../atoms/searchAtom'
+import MovieView from '../../components/Views/movieview'
+import { Page } from '../../types/type'
+
+const page: Page = {
+  name: 'Search',
+  desc: '검색 결과',
+  getData: (word) => getSearchData(word),
+}
 
 const SearchResultPage = () => {
-  const { word } = useParams<string>()
-  const { data, isLoading, error } = useSearchMovies(word?.toString() ?? 'default-word', 1)
+  const { word } = useParams()
+  const searchWord = useRecoilValue(search)
 
-  useEffect(() => {
-    console.log('word 값 변경 감지:', word) // word 값 변경 시 로그 출력 (테스트용)
-  }, [word])
-
-  console.log(data?.results)
-  return (
-    <div className="w-content bg-yellow-100 flex flex-col m-auto justify-center">
-      <div className="ml-5 text-lg font-bold mb-6">
-        {word}
-        {data && data?.results?.length}개
-        {data && (
-          <div>
-            {data?.results?.map((info: resultsType) => (
-              <OneCardImage info={info} />
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  )
+  return <MovieView {...page} word={searchWord} />
 }
 
 export default SearchResultPage

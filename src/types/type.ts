@@ -16,7 +16,8 @@ export const Nav: NavBar[] = [
 export interface Page {
   name: string
   desc: string
-  getData: () => UseInfiniteQueryResult<InfiniteData<any, unknown>, Error>
+  getData: (word?: string | undefined) => UseInfiniteQueryResult<InfiniteData<any, unknown>, Error>
+  word?: string
 }
 
 export interface resultsType {

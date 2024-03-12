@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
+import { useRecoilState } from 'recoil'
+import { search } from '../../atoms/searchAtom'
 import { Nav, NavBar } from '../../types/type'
 import { Search } from '../Icons/search'
 import UnderLine from '../Underline/underline'
@@ -13,6 +15,7 @@ const Layout = () => {
   const [selected, setSelected] = useState<NavBar>(Nav[0])
   const [preItem, setPreItem] = useState<NavBar>(Nav[0])
   const inputRef = useRef<HTMLInputElement>(null)
+  const [searchWord, setSearchWord] = useRecoilState(search)
 
   const onClickBtn = (num: number) => {
     // eslint-disable-next-line default-case
@@ -39,6 +42,9 @@ const Layout = () => {
     e.preventDefault()
     const searchWord = inputRef.current?.value
     navigate(`/search/${searchWord}`)
+    setIsOpen(false)
+    setSearchWord(searchWord)
+    // set(a)
   }
 
   return (
