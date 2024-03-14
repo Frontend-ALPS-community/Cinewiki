@@ -1,7 +1,5 @@
-import { useParams } from 'react-router-dom'
-import { useRecoilValue } from 'recoil'
+import { useLocation } from 'react-router-dom'
 import { getSearchData } from '../../apis/query'
-import { search } from '../../atoms/searchAtom'
 import MovieView from '../../components/Views/movieview'
 import { Page } from '../../types/type'
 
@@ -12,12 +10,10 @@ const page: Page = {
 }
 
 const SearchResultPage = () => {
-  const { word } = useParams()
-  const searchWord = useRecoilValue(search)
+  const location = useLocation()
+  const word = location.search.slice(6)
 
-  return <MovieView {...page} word={searchWord} />
+  return <MovieView {...page} word={word} />
 }
 
 export default SearchResultPage
-
-// word?.toString() ?? 'default-word'

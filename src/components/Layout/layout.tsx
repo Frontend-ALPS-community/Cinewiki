@@ -38,13 +38,9 @@ const Layout = () => {
     }
   }
 
-  const onSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const searchWord = inputRef.current?.value
-    navigate(`/search/${searchWord}`)
-    setIsOpen(false)
-    setSearchWord(searchWord)
-    // set(a)
+  const onSearch = () => {
+    navigate(`/search?word=${inputRef?.current?.value}`)
+    window.location.reload()
   }
 
   return (
@@ -71,7 +67,7 @@ const Layout = () => {
         onHoverStart={() => setIsHovered(!isHovered)}
         onHoverEnd={() => setIsHovered(!isHovered)}
         onClick={() => {
-          setIsOpen(!isOpen)
+          // setIsOpen(!isOpen)
         }}
       >
         {/* 로고 */}
@@ -104,16 +100,17 @@ const Layout = () => {
               <form onSubmit={onSearch} className="flex w-full bg-white rounded-lg">
                 <img className="pl-2" src="/assets/images/search.png" />
                 <input
-                  onClick={(e) => {
-                    e.stopPropagation()
-                  }}
                   className="p-2 placeholder-gray text-gray-900 bg-white border-none focus:outline-none"
                   placeholder="search"
+                  name="word"
                   ref={inputRef}
                 />
+                <button>검색</button>
               </form>
             ) : (
-              <Search />
+              <div onClick={() => setIsOpen(true)}>
+                <Search />
+              </div>
             )}
           </motion.div>
           {Nav.map((item) => (
@@ -141,11 +138,21 @@ const Layout = () => {
           ))}
 
           {isOpen ? (
-            <motion.div className="cursor-pointer" whileHover={{ scale: 1.3 }} whileTap={{ scale: 1 }}>
+            <motion.div
+              onClick={() => setIsOpen(!isOpen)}
+              className="cursor-pointer"
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 1 }}
+            >
               <img src="/assets/images/left.png" />
             </motion.div>
           ) : (
-            <motion.div className="cursor-pointer" whileHover={{ scale: 1.3 }} whileTap={{ scale: 1 }}>
+            <motion.div
+              onClick={() => setIsOpen(!isOpen)}
+              className="cursor-pointer"
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 1 }}
+            >
               <img src="/assets/images/right.png" />
             </motion.div>
           )}
