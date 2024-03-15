@@ -12,9 +12,7 @@ const MoreBtn: React.FC<MoreBtnProps> = ({ sliderRef }) => {
   }
   return (
     <button
-      className="mt-[42px] mb-[20px] h-[47px] w-[94px] rounded-[15px] text-center  text-[20px] font-bold border-[1px] border-gray-600 bg-white
-      border-[1px] border-black
-      "
+      className="text-center px-4 py-2 m-5 rounded-xl text-center text-md font-bold border-[1px] border-gray-800 bg-white"
       onClick={() => handleMore}
     >
       MORE

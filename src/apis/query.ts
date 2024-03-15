@@ -108,6 +108,7 @@ export const getSearchData = (word: string | undefined) => {
 
   return data
 }
+
 export const useMovieDetail = (id: number) => {
   const data = useQuery({
     queryKey: ['detail'],

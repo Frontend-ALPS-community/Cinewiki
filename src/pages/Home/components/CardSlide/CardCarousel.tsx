@@ -7,26 +7,24 @@ import { resultsType } from '../../../../types/type'
 import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
 import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
 
-function NextArrow(props: any) {
-  const { onClick } = props
-
-  return (
-    <div className="absolute z-10 rounded-full p-3 bg-gray-100 top-[40%] right-[-60px]" onClick={onClick}>
-      <ArrowRightIcon />
-    </div>
-  )
+interface ArrowProps {
+  onClick?: () => void
 }
 
-function PrevArrow(props: any) {
-  const { onClick } = props
-  return (
-    <div className="absolute z-10 rounded-full p-3 bg-gray-100 top-[40%] left-[-60px]" onClick={onClick}>
-      <ArrowLeftIcon />
-    </div>
-  )
-}
+const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
+  <div className="absolute z-10 rounded-full p-3 bg-gray-100 top-[40%] right-[-60px]" onClick={onClick}>
+    <ArrowRightIcon />
+  </div>
+)
+
+const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
+  <div className="absolute z-10 rounded-full p-3 bg-gray-100 top-[40%] left-[-60px]" onClick={onClick}>
+    <ArrowLeftIcon />
+  </div>
+)
+
 interface CardCarouselProps {
-  content: resultsType[] // resultsType 객체 배열로 타입 지정필요함
+  content: resultsType[]
 }
 
 const CardCarousel: React.FC<CardCarouselProps> = ({ content }) => {

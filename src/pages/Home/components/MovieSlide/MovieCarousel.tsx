@@ -8,27 +8,24 @@ import { IMAGE_URL } from '../../../../utils/ImageURL'
 import { resultsType } from '../../../../types/type'
 import PlayBtn from '../../../../components/Buttons/playBtn'
 
+interface ArrowProps {
+  onClick?: () => void
+}
+
+const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
+  <div className="absolute rounded p-3 z-10 bg-white border-solid right-[30px] top-[78%]" onClick={onClick}>
+    <ArrowRightIcon />
+  </div>
+)
+
+const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
+  <div className="absolute z-10 rounded p-3 bg-white border-solid right-[90px] top-[78%]" onClick={onClick}>
+    <ArrowLeftIcon />
+  </div>
+)
+
 interface MovieCarouselProps {
   images: resultsType[] | undefined
-}
-
-function NextArrow(props: any) {
-  const { onClick } = props
-
-  return (
-    <div className="absolute rounded p-3 z-10 bg-white border-solid right-[30px] top-[78%]" onClick={onClick}>
-      <ArrowRightIcon />
-    </div>
-  )
-}
-
-function PrevArrow(props: any) {
-  const { onClick } = props
-  return (
-    <div className="absolute z-10 rounded p-3 bg-white border-solid right-[90px] top-[78%]" onClick={onClick}>
-      <ArrowLeftIcon />
-    </div>
-  )
 }
 
 const IMG_BASE_URL = IMAGE_URL(1280)

@@ -20,7 +20,13 @@ const MovieView: React.FC<Page> = ({ name, desc, getData, word }) => {
   return (
     <div className="w-content w-[1440px] mx-auto">
       <div className="text-xl font-bolder mt-16">{name}</div>
-      <div className="font-md text-md my-6">{desc}</div>
+      {word ? (
+        <div className="font-md text-md my-6 flex">
+          <p className="font-bold mr-2 text-blue-400">{word}</p> 검색 결과
+        </div>
+      ) : (
+        <div className="font-md text-md my-6">{desc}</div>
+      )}
       <div className="flex flex-wrap gap-3 mx-auto">
         {data?.pages.map((page) => page.results.map((info: resultsType) => <OneCardImage info={info} />))}
       </div>
