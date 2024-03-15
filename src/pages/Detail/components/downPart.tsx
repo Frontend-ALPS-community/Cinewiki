@@ -18,17 +18,16 @@ const DownPart = () => {
     slidesToScroll: 1,
     variableWidth: true,
   }
-  // console.log(sliderRef)
   return (
-    <div className=" w-[1060px] h-[130vh] bg-yellow-200 mx-auto">
-      <div className="pt-[21px] ml-[17px] w-[70px] h-[30px] text-[20px] font-bold mb-[40px]  ">Casts</div>
+    <div className=" w-content mx-auto">
+      <div className="pt-[21px] ml-[17px] text-lg font-bold mb-[40px] ">Casts</div>
       {/* <div className=" ml-[39px] w-[1060px] "> */}
-      <div className="w-[920px] h-[240px]  ml-[60px] border-2 border-sky-500">
+      <div className="w-[920px] h-[240px] ml-[60px] border-2 border-sky-500">
         <Slider ref={sliderRef} {...settings}>
           {images.map((image, index) => (
             <div key={index} className="w-[160px] h-[210px] mr-[30px]  ">
-              <img className="w-[160px] h-[210px] " src={`/images/${image}`} alt={`castSlide ${index + 1}`} />
-              <div className="w-[160px] h-[24px]   text-center text-[20px] text-gray-300  ">cast name</div>
+              <img className="w-[160px] h-[210px] " src={`/assets/images/${image}`} alt={`castSlide ${index + 1}`} />
+              <div className="w-[160px] h-[24px] text-center text-[20px] text-gray-300  ">cast name</div>
             </div>
           ))}
         </Slider>

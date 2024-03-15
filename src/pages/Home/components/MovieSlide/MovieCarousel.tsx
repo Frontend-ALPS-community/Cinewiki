@@ -1,59 +1,65 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
+import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
+import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
+import { IMAGE_URL } from '../../../../utils/ImageURL'
+import { resultsType } from '../../../../types/type'
+import PlayBtn from '../../../../components/Buttons/playBtn'
 
-type ArrowProps = {
-  className?: string
-  onClick: () => void
+interface ArrowProps {
+  onClick?: () => void
 }
 
-const NextArrow: React.FC<ArrowProps> = ({ className, onClick }) => {
-  return (
-    <div
-      className={`${className} bg-gray-200 absolute top-1/2 right-0 -translate-y-1/2 transform cursor-pointer z-10`}
-      onClick={onClick}
-    >
-      <img src="/icon/right-arrow.png" />
-    </div>
-  )
+const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
+  <div className="absolute rounded p-3 z-10 bg-white border-solid right-[30px] top-[78%]" onClick={onClick}>
+    <ArrowRightIcon />
+  </div>
+)
+
+const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
+  <div className="absolute z-10 rounded p-3 bg-white border-solid right-[90px] top-[78%]" onClick={onClick}>
+    <ArrowLeftIcon />
+  </div>
+)
+
+interface MovieCarouselProps {
+  images: resultsType[] | undefined
 }
 
-const PrevArrow: React.FC<ArrowProps> = ({ className, onClick }) => {
-  return (
-    <div
-      className={`${className} absolute top-1/2 left-0 -translate-y-1/2 transform cursor-pointer z-10`}
-      onClick={onClick}
-    >
-      <img src="/icon/left-arrow.png" />
-    </div>
-  )
-}
+const IMG_BASE_URL = IMAGE_URL(1280)
 
-const MovieCarousel: React.FC = () => {
-  const sliderRef = useRef<Slider>(null)
-
-  const sliderSettings = {
-    dots: true,
+const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
+  const settings = {
+    dots: false,
     infinite: true,
+    autoplay: true,
     speed: 500,
-    arrows: true,
-    nextArrow: <NextArrow onClick={() => sliderRef.current?.slickNext()} />,
-    prevArrow: <PrevArrow onClick={() => sliderRef.current?.slickPrev()} />,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true,
-    // centerPadding: '100px',
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    // className: 'center',
+    // centerMode: true,
+    // centerPadding: '200px',
   }
 
   return (
-    <div className="w-full bg-yellow-100">
+    <div className="relative mx-auto w-content bg-yellow-100">
       <div className="mx-auto">
-        <Slider ref={sliderRef} {...sliderSettings}>
-          <div className="bg-gray-100 h-[500px] w-[1060px]"> 11 </div>
-          <div className="bg-gray-200 h-[500px] w-[1060px]"> 22 </div>
-          <div className="bg-gray-300 h-[500px] w-[1060px]"> 33 </div>
-          <div className="bg-gray-400 h-[500px] w-[1060px]"> 44 </div>
+        <Slider {...settings}>
+          {images?.map((image) => (
+            <div className="flex align-center justify-center mx-auto">
+              <div className="flex align-center justify-center mx-auto">
+                <img src={IMG_BASE_URL + image.backdrop_path} className="w-content" />
+              </div>
+              <div className="absolute top-7 z-10">
+                <PlayBtn />
+              </div>
+              <div className="text-center mx-auto w-content m-4 text-xl font-bolder">{image.title}</div>
+            </div>
+          ))}
         </Slider>
       </div>
     </div>

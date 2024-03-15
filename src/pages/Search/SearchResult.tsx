@@ -1,9 +1,19 @@
+import { useLocation } from 'react-router-dom'
+import { getSearchData } from '../../apis/query'
+import MovieView from '../../components/Views/movieview'
+import { Page } from '../../types/type'
+
+const page: Page = {
+  name: 'Search',
+  desc: '검색 결과',
+  getData: (word) => getSearchData(word),
+}
+
 const SearchResultPage = () => {
-  return (
-    <div className="w-content bg-yellow-100 flex flex-col m-auto justify-center">
-      <div className="ml-5 text-lg font-bold mb-6">개발키워드...입력하세용</div>
-    </div>
-  )
+  const location = useLocation()
+  const word = location.search.slice(6)
+
+  return <MovieView {...page} word={word} />
 }
 
 export default SearchResultPage

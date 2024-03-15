@@ -1,36 +1,41 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { resultsType } from '../../types/type'
+import { IMAGE_URL } from '../../utils/ImageURL'
+import { ExpandWide } from '../Icons/expand'
 
-// interface OneCardImageProps {}
+interface OneCardImageProps {
+  info: resultsType
+}
 
-const OneCardImage: React.FC = () => {
+const IMG_BASE_URL = IMAGE_URL(300)
+
+const OneCardImage: React.FC<OneCardImageProps> = ({ info }) => {
   const [hovered, setHovered] = useState(false)
 
   return (
-    <div
-      className="w-[160px] h-[240px] relative"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <img alt="i" src="/images/bicycle.jpg" className="w-[160px] h-[240px] rounded-lg object-fill" />
-      {hovered && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="text-white flex flex-col items-center justify-center space-x-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14v3m0 0v3m0-3h3m-3 0H7" />
-            </svg>
-            <span>movie title 자리입니다</span>
-            <span>rating 자리</span>
+    <Link to={`/detail/${info.id}`} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+      <div className="w-[160px] h-[240px] relative bg-gray-100 rounded-lg">
+        <img
+          alt="i"
+          src={info.poster_path ? IMG_BASE_URL + info.poster_path : '/assets/images/backdrop.png'}
+          className="w-[160px] h-[240px] rounded-lg object-fill"
+        />
+        {hovered && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 rounded-lg">
+            <div className="text-white flex flex-col items-center justify-center space-y-3 space-x-3 gap-3">
+              <div className="flex items-center justify-center h-[100px]">
+                <ExpandWide />
+              </div>
+              <div className="flex flex-col gap-2 items-center justify-center">
+                <span className="font-bold mb-1">{info.title}</span>
+                <span className="font-bold mb-1 min-h-[30px]">⭐{info.vote_average.toFixed(1)}</span>
+              </div>
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </Link>
   )
 }
 

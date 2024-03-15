@@ -4,6 +4,7 @@ import DetailPage from '../pages/Detail'
 import ErrorPage from '../pages/Error/ErrorPage'
 import HomePage from '../pages/Home'
 import Nowplaying from '../pages/Nowplaying'
+import SearchResultPage from '../pages/Search/SearchResult'
 import Toprated from '../pages/Toprated'
 import Upcoming from '../pages/Upcoming'
 
@@ -29,8 +30,12 @@ const router = createBrowserRouter([
         element: <Toprated />,
       },
       {
-        path: '/detail',
+        path: '/detail/:id',
         element: <DetailPage />,
+      },
+      {
+        path: '/search',
+        element: <SearchResultPage />,
       },
       {
         path: '*',
