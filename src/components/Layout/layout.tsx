@@ -119,25 +119,14 @@ const Layout = () => {
             </motion.div>
           ))}
 
-          {isOpen ? (
-            <motion.div
-              onClick={() => setIsOpen(!isOpen)}
-              className="cursor-pointer"
-              whileHover={{ scale: 1.3 }}
-              whileTap={{ scale: 1 }}
-            >
-              <img src="/assets/images/left.png" />
-            </motion.div>
-          ) : (
-            <motion.div
-              onClick={() => setIsOpen(!isOpen)}
-              className="cursor-pointer"
-              whileHover={{ scale: 1.3 }}
-              whileTap={{ scale: 1 }}
-            >
-              <img src="/assets/images/right.png" />
-            </motion.div>
-          )}
+          <motion.div
+            onClick={() => setIsOpen(!isOpen)}
+            className="cursor-pointer"
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 1 }}
+          >
+            <img src={isOpen ? '/assets/images/left.png' : '/assets/images/right.png'} />
+          </motion.div>
         </div>
       </motion.div>
       <Outlet />
