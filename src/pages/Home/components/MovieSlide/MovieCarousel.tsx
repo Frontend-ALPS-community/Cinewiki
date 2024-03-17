@@ -54,7 +54,7 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
               <div className="flex align-center justify-center mx-auto">
                 <img src={IMG_BASE_URL + image.backdrop_path} className="w-content" />
               </div>
-              <div className="absolute top-7 z-10">
+              <div className="absolute top-[82%] ml-5 z-10">
                 <PlayBtn />
               </div>
               <div className="text-center mx-auto w-content m-4 text-xl font-bolder">{image.title}</div>
