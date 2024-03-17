@@ -1,12 +1,13 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
 import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
 import { IMAGE_URL } from '../../../../utils/ImageURL'
 import { resultsType } from '../../../../types/type'
 import PlayBtn from '../../../../components/Buttons/playBtn'
+import { useMovieVideos } from '../../../../apis/query'
 
 interface ArrowProps {
   onClick?: () => void
@@ -31,6 +32,9 @@ interface MovieCarouselProps {
 const IMG_BASE_URL = IMAGE_URL(1280)
 
 const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
+  const { id } = useParams()
+  // const { videos } = useMovieVideos(Number(id))
+
   const settings = {
     dots: false,
     infinite: true,
@@ -56,9 +60,7 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
                   <img src={IMG_BASE_URL + image.backdrop_path} className="w-content" />
                 </div>
               </Link>
-              <div className="absolute top-[82%] ml-5 z-10">
-                <PlayBtn />
-              </div>
+              <div className="absolute top-[82%] ml-5 z-10">{/* <PlayBtn videos={videos.results[0]} /> */}</div>
               <div className="text-center mx-auto w-content m-4 text-xl font-bolder">{image.title}</div>
             </div>
           ))}

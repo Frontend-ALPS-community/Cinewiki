@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useMovieDetail, useMovieImage } from '../../../apis/query'
+import { useMovieDetail, useMovieImage, useMovieVideos } from '../../../apis/query'
 import GoBackBtn from '../../../components/Buttons/goBackBtn'
 import PlayBtn from '../../../components/Buttons/playBtn'
 import { IMAGE_URL } from '../../../utils/ImageURL'
@@ -9,6 +9,9 @@ const UpperPart = () => {
   const { id } = useParams()
   const { data } = useMovieDetail(Number(id))
   const { images } = useMovieImage(Number(id))
+  const { videos } = useMovieVideos(Number(id))
+
+  console.log('videos', videos)
 
   const backURL = data?.backdrop_path
     ? `${IMAGE_URL(1280)}${data?.backdrop_path}`
@@ -29,7 +32,7 @@ const UpperPart = () => {
           <GoBackBtn />
           <img src={backURL} className="w-full overflow-hidden" />
           <div className="absolute top-[620px] left-5">
-            <PlayBtn />
+            {videos && videos.results.length > 0 && <PlayBtn videos={videos.results[0]} />}
           </div>
 
           <div className="w-[160px] h-[240px] border-2 rounded-[10px] absolute top-[550px] left-[837px] bg-gray-100">

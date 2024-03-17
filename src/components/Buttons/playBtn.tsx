@@ -1,8 +1,13 @@
 import { useState } from 'react'
 import PlayModal from '../Modal/playModal'
 import ModalDefault from '../Modal/defaultModal'
+import { resultsType } from '../../types/type'
 
-const PlayBtn = () => {
+interface PlayBtnProps {
+  videos: resultsType[] | undefined
+}
+
+const PlayBtn: React.FC<PlayBtnProps> = ({ videos }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => {
@@ -12,8 +17,10 @@ const PlayBtn = () => {
     setIsModalOpen(false)
   }
 
-  const youtubeID = 'nLL409se8sM?si=W_usutaHmE7rxPDA'
-  const youtubeURL = `https://www.youtube.com/embed/${youtubeID}`
+  // const youtubeID = 'nLL409se8sM?si=W_usutaHmE7rxPDA'
+  // const youtubeURL = `https://www.youtube.com/embed/${youtubeID}`
+
+  const youtubeURL = videos && videos.length > 0 ? `https://www.youtube.com/embed/${videos[0].key}` : ''
 
   return (
     <div>
