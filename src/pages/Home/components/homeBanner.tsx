@@ -6,6 +6,7 @@ const HomeBanner = () => {
   const { data } = res
 
   const images = data?.pages.flatMap((page) => page.results)
+  console.log(images)
 
   return (
     <div>

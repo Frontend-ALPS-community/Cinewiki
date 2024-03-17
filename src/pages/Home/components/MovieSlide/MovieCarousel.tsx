@@ -1,7 +1,7 @@
-import React from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
+import { Link } from 'react-router-dom'
 import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
 import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
 import { IMAGE_URL } from '../../../../utils/ImageURL'
@@ -50,10 +50,12 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
       <div className="mx-auto">
         <Slider {...settings}>
           {images?.map((image) => (
-            <div className="flex align-center justify-center mx-auto">
-              <div className="flex align-center justify-center mx-auto">
-                <img src={IMG_BASE_URL + image.backdrop_path} className="w-content" />
-              </div>
+            <div key={image.id} className="flex align-center justify-center mx-auto">
+              <Link to={`/detail/${image.id}`}>
+                <div className="flex align-center justify-center mx-auto">
+                  <img src={IMG_BASE_URL + image.backdrop_path} className="w-content" />
+                </div>
+              </Link>
               <div className="absolute top-[82%] ml-5 z-10">
                 <PlayBtn />
               </div>

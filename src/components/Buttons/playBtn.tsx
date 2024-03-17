@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import PlayModal from '../Modal/playModal'
 import ModalDefault from '../Modal/defaultModal'
 
 const PlayBtn = () => {
-  const navigate = useNavigate()
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => {
