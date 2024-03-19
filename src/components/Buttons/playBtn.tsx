@@ -17,9 +17,6 @@ const PlayBtn: React.FC<PlayBtnProps> = ({ videos }) => {
     setIsModalOpen(false)
   }
 
-  // const youtubeID = 'nLL409se8sM?si=W_usutaHmE7rxPDA'
-  // const youtubeURL = `https://www.youtube.com/embed/${youtubeID}`
-
   const youtubeURL = videos && videos.length > 0 ? `https://www.youtube.com/embed/${videos[0].key}` : ''
 
   console.log('youtube', youtubeURL)

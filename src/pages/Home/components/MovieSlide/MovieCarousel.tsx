@@ -33,7 +33,7 @@ const IMG_BASE_URL = IMAGE_URL(1280)
 
 const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
   const { id } = useParams()
-  // const { videos } = useMovieVideos(Number(id))
+  const { data: video } = useMovieVideos(Number(id))
 
   const settings = {
     dots: false,
@@ -60,7 +60,9 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
                   <img src={IMG_BASE_URL + image.backdrop_path} className="w-content" />
                 </div>
               </Link>
-              <div className="absolute top-[82%] ml-5 z-10">{/* <PlayBtn videos={videos.results[0]} /> */}</div>
+              <div className="absolute top-[82%] ml-5 z-10">
+                <PlayBtn videos={video.results} />
+              </div>
               <div className="text-center mx-auto w-content m-4 text-xl font-bolder">{image.title}</div>
             </div>
           ))}

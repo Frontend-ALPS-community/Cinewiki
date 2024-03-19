@@ -30,7 +30,7 @@ const UpperPart = () => {
           <GoBackBtn />
           <img src={backURL} className="w-full overflow-hidden" />
           <div className="absolute top-[620px] left-5">
-            <PlayBtn videos={video.results[0]} />
+            <PlayBtn videos={video.results} />
           </div>
 
           <div className="w-[160px] h-[240px] border-2 rounded-[10px] absolute top-[550px] left-[837px] bg-gray-100">
