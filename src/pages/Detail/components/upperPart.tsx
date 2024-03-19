@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useMovieDetail, useMovieImage, useMovieVideos } from '../../../apis/query'
+import { useMovieDetail, useMovieVideos } from '../../../apis/query'
 import GoBackBtn from '../../../components/Buttons/goBackBtn'
 import PlayBtn from '../../../components/Buttons/playBtn'
 import { IMAGE_URL } from '../../../utils/ImageURL'
@@ -8,18 +8,16 @@ import { IMAGE_URL } from '../../../utils/ImageURL'
 const UpperPart = () => {
   const { id } = useParams()
   const { data } = useMovieDetail(Number(id))
-  const { images } = useMovieImage(Number(id))
-  const { videos } = useMovieVideos(Number(id))
+  const { data: video } = useMovieVideos(Number(id))
 
-  console.log('videos', videos)
+  console.log('videos', video)
+  console.log('data', data)
 
   const backURL = data?.backdrop_path
     ? `${IMAGE_URL(1280)}${data?.backdrop_path}`
     : '/assets/images/noImage_backdrop.png'
 
   const posterURL = data?.poster_path ? `${IMAGE_URL(300)}${data?.poster_path}` : '/assets/images/backdrop.png'
-
-  console.log(data)
 
   useEffect(() => {
     console.log('word 값 변경 감지:', id) // word 값 변경 시 로그 출력 (테스트용)
@@ -32,7 +30,7 @@ const UpperPart = () => {
           <GoBackBtn />
           <img src={backURL} className="w-full overflow-hidden" />
           <div className="absolute top-[620px] left-5">
-            {videos && videos.results.length > 0 && <PlayBtn videos={videos.results[0]} />}
+            <PlayBtn videos={video.results[0]} />
           </div>
 
           <div className="w-[160px] h-[240px] border-2 rounded-[10px] absolute top-[550px] left-[837px] bg-gray-100">
@@ -67,33 +65,3 @@ const UpperPart = () => {
   )
 }
 export default UpperPart
-// useEffect(() => {
-//   const interval = setInterval(() => {
-//     setCurrentIndex((prevIndex: any) => (prevIndex + 1) % images.length)
-//   }, 3000) // 3초마다 이미지 변경
-//   return () => clearInterval(interval)
-// }, [])
-
-/* 
-  const images = ['img01.png', 'img02.png', 'img03.png']
-  const transition = { duration: 0.5, ease: 'easeInOut' }
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-<AnimatePresence mode="popLayout">
-          {images.map((image, index) => (
-            <motion.div
-              key={index}
-              style={{
-                backgroundImage: `url${baseURL}/${data?.data.backdrop_path}`,
-                backgroundSize: 'cover',
-                width: '100%',
-                height: '100%',
-                display: index === currentIndex ? 'inline-block' : 'none',
-              }}
-              initial={{ x: index === currentIndex ? '100%' : 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: index === currentIndex ? '-100%' : 0, opacity: 0 }}
-              transition={transition}
-            />
-          ))}
-        </AnimatePresence> */

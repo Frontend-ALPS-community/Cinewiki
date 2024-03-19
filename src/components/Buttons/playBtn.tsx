@@ -22,13 +22,15 @@ const PlayBtn: React.FC<PlayBtnProps> = ({ videos }) => {
 
   const youtubeURL = videos && videos.length > 0 ? `https://www.youtube.com/embed/${videos[0].key}` : ''
 
+  console.log('youtube', youtubeURL)
+
   return (
     <div>
       <div className="rounded-full w-[76px] h-[76px] absolute bg-red-300 z-10" onClick={openModal}>
         <img className="w-[28px] h-[28px] mt-[22px] ml-[27px] " src="/assets/images/PlayBtn.png" />
       </div>
       <ModalDefault isOpen={isModalOpen} onClose={closeModal}>
-        <PlayModal closeModal={closeModal} youtubeURL={youtubeURL} />
+        <PlayModal youtubeURL={youtubeURL} />
       </ModalDefault>
     </div>
   )

@@ -18,6 +18,10 @@ const MovieView: React.FC<Page> = ({ name, desc, getData, word }) => {
     res.fetchNextPage()
   }, [inView])
 
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
+
   return (
     <div className="w-content w-[1440px] mx-auto">
       <div className="text-xl font-bolder mt-16">{name}</div>

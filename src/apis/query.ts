@@ -137,8 +137,8 @@ export const useMovieImage = (id: number) => {
 
 export const useMovieVideos = (id: number, language = 'en-US') => {
   const videos: any = useQuery({
-    queryKey: ['movieVideos', id, language],
-    queryFn: () => AxiosGetMovieVideos(id, language),
+    queryKey: ['movieVideos'],
+    queryFn: () => AxiosGetMovieVideos(id),
   })
 
   return videos
