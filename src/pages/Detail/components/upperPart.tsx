@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useMovieDetail, useMovieImage } from '../../../apis/query'
 import GoBackBtn from '../../../components/Buttons/goBackBtn'
@@ -11,10 +10,7 @@ const UpperPart = () => {
   const { images } = useMovieImage(Number(id))
   const backURL = `${IMAGE_URL(1280)}${data?.backdrop_path}`
   const posterURL = `${IMAGE_URL(300)}${data?.poster_path}`
-  console.log(data)
-  useEffect(() => {
-    console.log('word 값 변경 감지:', id) // word 값 변경 시 로그 출력 (테스트용)
-  }, [id])
+
   return (
     <div>
       {data && (

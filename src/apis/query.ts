@@ -53,6 +53,11 @@ const AxiosGetImages = async (id: number) => {
   return res.data
 }
 
+const AxiosGetVideos = async (id: number) => {
+  const res = await Axios.get(`${detail}/${id}/videos`)
+  return res.data
+}
+
 export const getNowPlayData = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const data = useInfiniteQuery({
@@ -123,4 +128,14 @@ export const useMovieImage = (id: number) => {
     queryFn: () => AxiosGetImages(id),
   })
   return images
+}
+// 이미지 영상 둘다 결국에 string으로
+
+export const getMovieVideo = (id: number) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const data: any = useQuery({
+    queryKey: ['video'],
+    queryFn: () => AxiosGetVideos(id),
+  })
+  return data
 }

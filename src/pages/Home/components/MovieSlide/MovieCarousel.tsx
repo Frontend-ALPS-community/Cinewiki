@@ -2,11 +2,11 @@ import React from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
-import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
-import { IMAGE_URL } from '../../../../utils/ImageURL'
-import { resultsType } from '../../../../types/type'
 import PlayBtn from '../../../../components/Buttons/playBtn'
+import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
+import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
+import { resultsType } from '../../../../types/type'
+import { IMAGE_URL } from '../../../../utils/ImageURL'
 
 interface ArrowProps {
   onClick?: () => void
