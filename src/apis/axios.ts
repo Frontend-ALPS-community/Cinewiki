@@ -6,7 +6,7 @@ const upcoming = '/movie/upcoming'
 const search = '/search/movie'
 const detail = '/movie'
 
-const AxiosGetNow = async (params: any) => {
+const AxiosGetNow = async (params: number) => {
   // eslint-disable-next-line no-return-await
   const res = await Axios.get(nowplay, {
     params: {
@@ -15,7 +15,7 @@ const AxiosGetNow = async (params: any) => {
   })
   return res.data
 }
-const AxiosGetToprated = async (params: any) => {
+const AxiosGetToprated = async (params: number) => {
   // eslint-disable-next-line no-return-await
   const res = await Axios.get(toprated, {
     params: {
@@ -24,7 +24,7 @@ const AxiosGetToprated = async (params: any) => {
   })
   return res.data
 }
-const AxiosGetUpcoming = async (params: any) => {
+const AxiosGetUpcoming = async (params: number) => {
   // eslint-disable-next-line no-return-await
   const res = await Axios.get(upcoming, {
     params: {

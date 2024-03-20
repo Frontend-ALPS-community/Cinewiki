@@ -31,3 +31,13 @@ export interface resultsType {
   video: boolean
   vote_average: number
 }
+
+export interface genre {
+  id: string
+  name: string
+}
+
+export interface cast {
+  profile_path: string
+  name: string
+}

@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useMovieDetail } from '../../../apis/query'
 import GoBackBtn from '../../../components/Buttons/goBackBtn'
 import PlayBtn from '../../../components/Buttons/playBtn'
+import { genre } from '../../../types/type'
 import { IMAGE_URL } from '../../../utils/ImageURL'
 
 const UpperPart = () => {
@@ -31,7 +32,7 @@ const UpperPart = () => {
           <div className="ml-[21px] flex items-center text-center my-5 gap-7">
             <div className="text-[32px] font-bold ">{data?.title}</div>
             <div className="">
-              {data?.genres.map((item: any) => (
+              {data?.genres.map((item: genre) => (
                 <span
                   key={item.id}
                   className="mr-3 cursor-pointer text-[16px] text-gray-300 border-2 px-3 py-2 rounded-3xl"

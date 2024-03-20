@@ -75,7 +75,7 @@ export const useMovieDetail = (id: number) => {
 }
 
 export const useMovieImage = (id: number) => {
-  const images: any = useQuery({
+  const images = useQuery({
     queryKey: ['image'],
     queryFn: () => AxiosGetImages(id),
   })
@@ -83,7 +83,7 @@ export const useMovieImage = (id: number) => {
 }
 
 export const useMovieVideos = (id: number, language = 'en-US') => {
-  const videos: any = useQuery({
+  const videos = useQuery({
     queryKey: ['movieVideos'],
     queryFn: () => AxiosGetMovieVideos(id),
   })
@@ -92,7 +92,7 @@ export const useMovieVideos = (id: number, language = 'en-US') => {
 }
 
 export const useMovieCredits = (id: number) => {
-  const credit: any = useQuery({
+  const credit = useQuery({
     queryKey: ['movieCredit'],
     queryFn: () => AxiosGetMovieCredits(id),
   })
