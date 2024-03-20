@@ -1,19 +1,22 @@
-import Slider from 'react-slick'
+import React from 'react'
 
 // MoreBtnProps 타입 정의
 interface MoreBtnProps {
-  sliderRef: React.RefObject<Slider> // Slider 컴포넌트의 RefObject 타입
+  gridHeight: string
+  setGridHeight: React.Dispatch<React.SetStateAction<string>>
 }
-const MoreBtn: React.FC<MoreBtnProps> = ({ sliderRef }) => {
+const MoreBtn: React.FC<MoreBtnProps> = ({ gridHeight, setGridHeight }) => {
+  const more = Number(gridHeight) * 2
+
   const handleMore = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickNext()
-    }
+    console.log('@')
+    setGridHeight(more.toString())
   }
+
   return (
     <button
       className="text-center px-4 py-2 m-5 rounded-xl text-center text-md font-bold border-[1px] border-gray-800 bg-white"
-      onClick={() => handleMore}
+      onClick={() => setGridHeight(more.toString())}
     >
       MORE
     </button>
