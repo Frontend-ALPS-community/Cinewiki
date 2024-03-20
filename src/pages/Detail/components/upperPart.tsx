@@ -10,18 +10,11 @@ const UpperPart = () => {
   const { data } = useMovieDetail(Number(id))
   const { data: video } = useMovieVideos(Number(id))
 
-  console.log('videos', video)
-  console.log('data', data)
-
   const backURL = data?.backdrop_path
     ? `${IMAGE_URL(1280)}${data?.backdrop_path}`
     : '/assets/images/noImage_backdrop.png'
 
   const posterURL = data?.poster_path ? `${IMAGE_URL(300)}${data?.poster_path}` : '/assets/images/backdrop.png'
-
-  useEffect(() => {
-    console.log('word 값 변경 감지:', id) // word 값 변경 시 로그 출력 (테스트용)
-  }, [id])
 
   return (
     <div className="min-h-[1000px]">
@@ -29,9 +22,7 @@ const UpperPart = () => {
         <div className="pt-[36px] relative w-content mx-auto ">
           <GoBackBtn />
           <img src={backURL} className="w-full overflow-hidden" />
-          <div className="absolute top-[620px] left-5">
-            <PlayBtn videos={video.results} />
-          </div>
+          <div className="absolute top-[620px] left-5">{video.results && <PlayBtn videos={video.results} />}</div>
 
           <div className="w-[160px] h-[240px] border-2 rounded-[10px] absolute top-[550px] left-[837px] bg-gray-100">
             <img src={posterURL} className=" h-full rounded-[10px]" />

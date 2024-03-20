@@ -19,8 +19,6 @@ const PlayBtn: React.FC<PlayBtnProps> = ({ videos }) => {
 
   const youtubeURL = videos && videos.length > 0 ? `https://www.youtube.com/embed/${videos[0].key}` : ''
 
-  console.log('youtube', youtubeURL)
-
   return (
     <div>
       <div className="rounded-full w-[76px] h-[76px] absolute bg-red-300 z-10" onClick={openModal}>
