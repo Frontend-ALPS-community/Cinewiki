@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
+import { getNowPlayData } from '../../../../apis/query'
 import PlayBtn from '../../../../components/Buttons/playBtn'
 import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
 import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
 import { IMAGE_URL } from '../../../../utils/ImageURL'
-import { getNowPlayData } from '../../../../apis/query'
 
 interface ArrowProps {
   onClick?: () => void
