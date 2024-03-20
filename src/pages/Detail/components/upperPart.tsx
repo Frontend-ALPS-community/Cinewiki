@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { useMovieDetail, useMovieVideos } from '../../../apis/query'
+import { useMovieDetail } from '../../../apis/query'
 import GoBackBtn from '../../../components/Buttons/goBackBtn'
 import PlayBtn from '../../../components/Buttons/playBtn'
 import { IMAGE_URL } from '../../../utils/ImageURL'
@@ -7,7 +7,6 @@ import { IMAGE_URL } from '../../../utils/ImageURL'
 const UpperPart = () => {
   const { id } = useParams()
   const { data } = useMovieDetail(Number(id))
-  const video = useMovieVideos(Number(id))
 
   const backURL = data?.backdrop_path
     ? `${IMAGE_URL(1280)}${data?.backdrop_path}`
@@ -22,7 +21,7 @@ const UpperPart = () => {
           <GoBackBtn />
           <img src={backURL} className="w-full overflow-hidden" />
           <div className="absolute top-[620px] left-5">
-            {video?.data?.results && <PlayBtn videos={video?.data?.results} />}
+            <PlayBtn id={id} />
           </div>
 
           <div className="w-[160px] h-[240px] border-2 rounded-[10px] absolute top-[550px] left-[837px] bg-gray-100">

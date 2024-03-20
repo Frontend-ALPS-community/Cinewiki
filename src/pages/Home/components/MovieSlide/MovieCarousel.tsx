@@ -1,8 +1,8 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import { useMovieVideos } from '../../../../apis/query'
+import PlayBtn from '../../../../components/Buttons/playBtn'
 import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
 import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
 import { resultsType } from '../../../../types/type'
@@ -31,9 +31,6 @@ interface MovieCarouselProps {
 const IMG_BASE_URL = IMAGE_URL(1280)
 
 const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
-  const { id } = useParams()
-  const { data: video } = useMovieVideos(Number(id))
-
   const settings = {
     dots: false,
     infinite: true,
@@ -59,7 +56,9 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
                   <img src={IMG_BASE_URL + image.backdrop_path} className="w-content" />
                 </div>
               </Link>
-              <div className="absolute top-[82%] ml-5 z-10">{/* <PlayBtn videos={video.results} /> */}</div>
+              <div className="absolute top-[82%] ml-5 z-10">
+                <PlayBtn id={image.id} />
+              </div>
               <div className="text-center mx-auto w-content m-4 text-xl font-bolder">{image.title}</div>
             </div>
           ))}
