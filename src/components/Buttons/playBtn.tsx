@@ -18,8 +18,11 @@ const PlayBtn: React.FC<PlayBtnProps> = ({ id }) => {
   const closeModal = () => {
     setIsModalOpen(false)
   }
-
-  const youtubeURL = videos?.data?.results ? `https://www.youtube.com/embed/${videos?.data?.results[0].key}` : ''
+  console.log(videos)
+  const youtubeURL =
+    videos?.data?.results && videos?.data?.results.length > 0
+      ? `https://www.youtube.com/embed/${videos?.data?.results[0].key}`
+      : ''
 
   return (
     <div>
