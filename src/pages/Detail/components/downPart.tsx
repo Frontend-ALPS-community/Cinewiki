@@ -8,9 +8,7 @@ const DownPart = () => {
   const { id } = useParams()
   const [gridHeight, setGridHeight] = useState('240px')
   const { data } = useMovieCredits(Number(id))
-  // console.log(data)
 
-  // const gridHeight = '280px'
   return (
     <div className="  w-content mx-auto">
       <div className="pt-[21px] ml-[17px] text-lg font-bold mb-[40px] ">Casts</div>

@@ -2,10 +2,10 @@ import React, { useRef } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import OneCardImage from '../../../../components/Card/card'
-import { resultsType } from '../../../../types/type'
-import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
-import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
+import OneCardImage from '../../../../../components/Card/card'
+import { ArrowLeftIcon } from '../../../../../components/Icons/arrow-left'
+import { ArrowRightIcon } from '../../../../../components/Icons/arrow-right'
+import { resultsType } from '../../../../../types/type'
 
 interface ArrowProps {
   onClick?: () => void

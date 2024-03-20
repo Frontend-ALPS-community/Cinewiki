@@ -1,5 +1,5 @@
+import HomeCardGroup from './components/HomeCardGroup/homeCardGroup'
 import MovieCarousel from './components/MovieSlide/MovieCarousel'
-import HomeCardGroup from './components/homeCardGroup'
 
 const HomePage = () => {
   return (

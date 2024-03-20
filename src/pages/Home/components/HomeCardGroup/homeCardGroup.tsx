@@ -1,4 +1,4 @@
-import { getData } from '../../../utils/getData'
+import { getData } from '../../../../utils/getData'
 import CardCarousel from './CardSlide/CardCarousel'
 
 const HomeCardGroup = () => {
