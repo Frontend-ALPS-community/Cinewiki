@@ -1,8 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-import { useRecoilState } from 'recoil'
-import { search } from '../../atoms/searchAtom'
 import { Nav, NavBar } from '../../types/type'
 import { Search } from '../Icons/search'
 import UnderLine from '../Underline/underline'
@@ -15,7 +13,6 @@ const Layout = () => {
   const [selected, setSelected] = useState<NavBar>(Nav[0])
   const [preItem, setPreItem] = useState<NavBar>(Nav[0])
   const inputRef = useRef<HTMLInputElement>(null)
-  const [searchWord, setSearchWord] = useRecoilState(search)
 
   const onClickBtn = (path: string) => {
     navigate(path)
@@ -49,9 +46,6 @@ const Layout = () => {
         animate={{ width: isOpen ? '330px' : '122px' }}
         onHoverStart={() => setIsHovered(!isHovered)}
         onHoverEnd={() => setIsHovered(!isHovered)}
-        onClick={() => {
-          // setIsOpen(!isOpen)
-        }}
       >
         {/* 로고 */}
 

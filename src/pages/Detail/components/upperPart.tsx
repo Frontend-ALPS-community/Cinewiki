@@ -46,7 +46,6 @@ const UpperPart = () => {
               ⭐ {data?.vote_average.toFixed(1)}
             </span>
             <span className="text-md font-bold"> Released : {data?.release_date}</span>
-            {/* <span className="text-[18px]"> * 1977/ 2h 1min/ released</span> */}
           </div>
 
           <div className="my-8 mx-5 text-[18px]">{data?.overview}</div>

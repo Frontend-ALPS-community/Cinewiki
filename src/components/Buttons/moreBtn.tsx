@@ -1,6 +1,5 @@
 import React from 'react'
 
-// MoreBtnProps 타입 정의
 interface MoreBtnProps {
   gridHeight: string
   setGridHeight: React.Dispatch<React.SetStateAction<string>>

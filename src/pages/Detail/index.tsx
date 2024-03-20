@@ -13,11 +13,3 @@ const DetailPage = () => {
   )
 }
 export default DetailPage
-
-/**
- 
-className=" w-[1060px] h-[130vh] bg-yellow-200 mx-auto "
-
-회색선 absolute로 해보기.
-
- */
