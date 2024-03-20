@@ -47,9 +47,19 @@ const AxiosGetDetail = async (id: number) => {
 
   return res.data
 }
+
 const AxiosGetImages = async (id: number) => {
   const res = await Axios.get(`${detail}/${id}/images`)
 
+  return res.data
+}
+
+const AxiosGetMovieVideos = async (movieId: number, language = 'en-US') => {
+  const res = await Axios.get(`/movie/${movieId}/videos`, {
+    params: {
+      language,
+    },
+  })
   return res.data
 }
 
@@ -123,4 +133,13 @@ export const useMovieImage = (id: number) => {
     queryFn: () => AxiosGetImages(id),
   })
   return images
+}
+
+export const useMovieVideos = (id: number, language = 'en-US') => {
+  const videos: any = useQuery({
+    queryKey: ['movieVideos'],
+    queryFn: () => AxiosGetMovieVideos(id),
+  })
+
+  return videos
 }

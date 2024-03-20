@@ -22,6 +22,7 @@ export interface Page {
 }
 
 export interface resultsType {
+  key: string
   id: string
   poster_path: string
   backdrop_path: string

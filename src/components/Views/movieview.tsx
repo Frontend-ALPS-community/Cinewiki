@@ -3,19 +3,24 @@ import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { Page, resultsType } from '../../types/type'
 import OneCardImage from '../Card/card'
+import ScrollToTopButton from '../Buttons/scrollToTopBtn'
 
 const MovieView: React.FC<Page> = ({ name, desc, getData, word }) => {
-  // const res = word ? getData(word) : getData()
   const res = word ? getData(word) : getData()
 
   const { data } = res
   const [ref, inView] = useInView()
+
   useEffect(() => {
     // eslint-disable-next-line no-empty
     if (!inView) {
     }
     res.fetchNextPage()
   }, [inView])
+
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
 
   return (
     <div className="w-content w-[1440px] mx-auto">
@@ -31,6 +36,7 @@ const MovieView: React.FC<Page> = ({ name, desc, getData, word }) => {
         {data?.pages.map((page) => page.results.map((info: resultsType) => <OneCardImage info={info} />))}
       </div>
       <div ref={ref} />
+      <ScrollToTopButton />
     </div>
   )
 }

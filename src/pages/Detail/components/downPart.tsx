@@ -21,7 +21,6 @@ const DownPart = () => {
   return (
     <div className=" w-content mx-auto">
       <div className="pt-[21px] ml-[17px] text-lg font-bold mb-[40px] ">Casts</div>
-      {/* <div className=" ml-[39px] w-[1060px] "> */}
       <div className="w-[920px] h-[240px] ml-[60px] border-2 border-sky-500">
         <Slider ref={sliderRef} {...settings}>
           {images.map((image, index) => (
@@ -33,7 +32,6 @@ const DownPart = () => {
         </Slider>
       </div>
 
-      {/* </div> */}
       <div className="grid place-items-center">
         <MoreBtn sliderRef={sliderRef} />
       </div>
@@ -41,28 +39,3 @@ const DownPart = () => {
   )
 }
 export default DownPart
-
-/*
-      <div className="flex">
-          <div className=" w-[160px] mr-[30px] ">
-            <div className=" w-[160px] h-[210px] rounded-[10px] bg-gray-100 text-center pt-[80px]">cast card</div>
-            <div className="w-[101px] h-[24px] mx-auto  text-center text-[20px] text-gray-300">cast name</div>
-          </div>
-          <div className=" w-[160px] mr-[30px]">
-            <div className=" w-[160px] h-[210px] rounded-[10px] bg-gray-100 text-center pt-[80px]">cast card</div>
-            <div className="w-[101px] h-[24px] mx-auto  text-center text-[20px] text-gray-300">cast name</div>
-          </div>
-          <div className=" w-[160px] mr-[30px]">
-            <div className=" w-[160px] h-[210px] rounded-[10px] bg-gray-100 text-center pt-[80px]">cast card</div>
-            <div className="w-[101px] h-[24px] mx-auto  text-center text-[20px] text-gray-300">cast name</div>
-          </div>
-          <div className=" w-[160px] mr-[30px]">
-            <div className=" w-[160px] h-[210px] rounded-[10px] bg-gray-100 text-center pt-[80px]">cast card</div>
-            <div className="w-[101px] h-[24px] mx-auto  text-center text-[20px] text-gray-300">cast name</div>
-          </div>
-          <div className=" w-[160px] mr-[30px]">
-            <div className=" w-[160px] h-[210px] rounded-[10px] bg-gray-100 text-center pt-[80px]">cast card</div>
-            <div className="w-[101px] h-[24px] mx-auto  text-center text-[20px] text-gray-300">cast name</div>
-          </div>
-        </div>
-*/

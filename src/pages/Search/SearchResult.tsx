@@ -11,7 +11,7 @@ const page: Page = {
 
 const SearchResultPage = () => {
   const location = useLocation()
-  const word = location.search.slice(6)
+  const word = decodeURIComponent(location.search.slice(6))
 
   return <MovieView {...page} word={word} />
 }

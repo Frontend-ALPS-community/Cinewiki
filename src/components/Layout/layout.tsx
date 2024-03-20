@@ -17,25 +17,8 @@ const Layout = () => {
   const inputRef = useRef<HTMLInputElement>(null)
   const [searchWord, setSearchWord] = useRecoilState(search)
 
-  const onClickBtn = (num: number) => {
-    // eslint-disable-next-line default-case
-    switch (num) {
-      case 1:
-        navigate('/')
-        break
-      case 2:
-        navigate('/nowplaying')
-        break
-      case 3:
-        navigate('/upcoming')
-        break
-      case 4:
-        navigate('/toprated')
-        break
-      case 5:
-        navigate('/')
-        break
-    }
+  const onClickBtn = (path: string) => {
+    navigate(path)
   }
 
   const onSearch = () => {
@@ -75,8 +58,8 @@ const Layout = () => {
         <div className="flex justify-center items-center mt-[30px]">
           {isOpen ? (
             <img
-              onClick={(e) => {
-                onClickBtn(1)
+              onClick={() => {
+                navigate('/')
                 setSelected(Nav[0])
               }}
               className="cursor-pointer w-full max-w-[245px] h-[103px]"
@@ -84,9 +67,8 @@ const Layout = () => {
             />
           ) : (
             <img
-              onClick={(e) => {
-                e.stopPropagation()
-                onClickBtn(1)
+              onClick={() => {
+                navigate('/')
               }}
               className="cursor-pointer w-[60px] h-[60px]"
               src="/assets/images/logo.png"
@@ -119,7 +101,7 @@ const Layout = () => {
               whileTap={{ scale: 1 }}
               onClick={(e) => {
                 e.stopPropagation()
-                onClickBtn(item.number)
+                onClickBtn(item.path)
                 setIsOpen(false)
                 setPreItem(item)
               }}
@@ -137,25 +119,14 @@ const Layout = () => {
             </motion.div>
           ))}
 
-          {isOpen ? (
-            <motion.div
-              onClick={() => setIsOpen(!isOpen)}
-              className="cursor-pointer"
-              whileHover={{ scale: 1.3 }}
-              whileTap={{ scale: 1 }}
-            >
-              <img src="/assets/images/left.png" />
-            </motion.div>
-          ) : (
-            <motion.div
-              onClick={() => setIsOpen(!isOpen)}
-              className="cursor-pointer"
-              whileHover={{ scale: 1.3 }}
-              whileTap={{ scale: 1 }}
-            >
-              <img src="/assets/images/right.png" />
-            </motion.div>
-          )}
+          <motion.div
+            onClick={() => setIsOpen(!isOpen)}
+            className="cursor-pointer"
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 1 }}
+          >
+            <img src={isOpen ? '/assets/images/left.png' : '/assets/images/right.png'} />
+          </motion.div>
         </div>
       </motion.div>
       <Outlet />
