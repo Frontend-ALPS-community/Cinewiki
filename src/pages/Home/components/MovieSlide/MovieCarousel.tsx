@@ -5,8 +5,8 @@ import 'slick-carousel/slick/slick.css'
 import PlayBtn from '../../../../components/Buttons/playBtn'
 import { ArrowLeftIcon } from '../../../../components/Icons/arrow-left'
 import { ArrowRightIcon } from '../../../../components/Icons/arrow-right'
-import { resultsType } from '../../../../types/type'
 import { IMAGE_URL } from '../../../../utils/ImageURL'
+import { getNowPlayData } from '../../../../apis/query'
 
 interface ArrowProps {
   onClick?: () => void
@@ -24,13 +24,14 @@ const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
   </div>
 )
 
-interface MovieCarouselProps {
-  images: resultsType[] | undefined
-}
-
 const IMG_BASE_URL = IMAGE_URL(1280)
 
-const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
+const MovieCarousel: React.FC = () => {
+  const res = getNowPlayData()
+  const { data } = res
+
+  const images = data?.pages.flatMap((page) => page.results)
+
   const settings = {
     dots: false,
     infinite: true,
@@ -40,9 +41,6 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ images }) => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    // className: 'center',
-    // centerMode: true,
-    // centerPadding: '200px',
   }
 
   return (

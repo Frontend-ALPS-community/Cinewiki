@@ -1,12 +1,12 @@
-import HomeBanner from './components/homeBanner'
+import MovieCarousel from './components/MovieSlide/MovieCarousel'
 import HomeCardGroup from './components/homeCardGroup'
 
 const HomePage = () => {
   return (
     <>
       <div className="w-full flex flex-col m-auto justify-center items-center bg-gray-100">
-        <div className="w-full max-w-[1920px]">
-          <HomeBanner />
+        <div className="">
+          <MovieCarousel />
         </div>
       </div>
       <div className="mt-7 border-b-4" />

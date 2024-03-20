@@ -42,7 +42,7 @@ const Layout = () => {
       </AnimatePresence>
 
       <motion.div
-        className="bg-primary-100 h-screen fixed top-0 z-40"
+        className="bg-primary-100 h-full fixed top-0 z-40"
         layout
         initial={{ width: '122px' }}
         transition={{ duration: 0.3 }}
