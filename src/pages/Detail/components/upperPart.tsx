@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useMovieDetail, useMovieVideos } from '../../../apis/query'
 import GoBackBtn from '../../../components/Buttons/goBackBtn'
@@ -8,7 +7,7 @@ import { IMAGE_URL } from '../../../utils/ImageURL'
 const UpperPart = () => {
   const { id } = useParams()
   const { data } = useMovieDetail(Number(id))
-  const { data: video } = useMovieVideos(Number(id))
+  const video = useMovieVideos(Number(id))
 
   const backURL = data?.backdrop_path
     ? `${IMAGE_URL(1280)}${data?.backdrop_path}`
@@ -22,7 +21,9 @@ const UpperPart = () => {
         <div className="pt-[36px] relative w-content mx-auto ">
           <GoBackBtn />
           <img src={backURL} className="w-full overflow-hidden" />
-          <div className="absolute top-[620px] left-5">{video.results && <PlayBtn videos={video.results} />}</div>
+          <div className="absolute top-[620px] left-5">
+            {video?.data?.results && <PlayBtn videos={video?.data?.results} />}
+          </div>
 
           <div className="w-[160px] h-[240px] border-2 rounded-[10px] absolute top-[550px] left-[837px] bg-gray-100">
             <img src={posterURL} className=" h-full rounded-[10px]" />
