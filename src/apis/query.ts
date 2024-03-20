@@ -63,6 +63,12 @@ const AxiosGetMovieVideos = async (movieId: number, language = 'en-US') => {
   return res.data
 }
 
+const AxiosGetMovieCredits = async (id: number) => {
+  const res = await Axios.get(`${detail}/${id}/credits`)
+
+  return res.data
+}
+
 export const getNowPlayData = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const data = useInfiniteQuery({
@@ -142,4 +148,13 @@ export const useMovieVideos = (id: number, language = 'en-US') => {
   })
 
   return videos
+}
+
+export const useMovieCredits = (id: number) => {
+  const credit: any = useQuery({
+    queryKey: ['movieCredit'],
+    queryFn: () => AxiosGetMovieCredits(id),
+  })
+
+  return credit
 }
