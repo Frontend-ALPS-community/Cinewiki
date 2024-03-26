@@ -68,36 +68,32 @@
 <table style="text-align: center">
   <tr>
     <td>
-      <img src="https://github.com/MOBI-BattleTalk/BattleTalk/assets/125418818/08b6d4e1-6bba-4c35-840f-02fe7f7d3a24" alt="회원가입/로그인" />
+      <img src="https://github.com/Frontend-ALPS-community/Cinewiki/assets/117559842/a0c140c4-3bc8-4731-9ec4-cfb66083f84a" alt="무한스크롤" />
     </td>
     <td>
-      <img src="https://github.com/MOBI-BattleTalk/BattleTalk/assets/125418818/c0f982b7-218e-4e8b-8103-17f545a3efe2" alt="닉네임 변경" />
+      <img src="https://github.com/Frontend-ALPS-community/Cinewiki/assets/117559842/4b75d4a2-467b-4749-b723-24f3a79bf31e" alt="모달" />
     </td>
   </tr>
    <tr>
     <th>
-      회원가입/로그인
+      무한 스크롤
     </th>
     <th>
-      닉네임 변경
+      상세 페이지
     </th>
   </tr>
  <tr>
     <td>
-      <img src="https://github.com/MOBI-BattleTalk/BattleTalk/assets/125418818/3a1c281d-acf5-445e-9fa7-e3e97400fdfa" alt="배틀 업로드" />
+      <img src="https://github.com/Frontend-ALPS-community/Cinewiki/assets/117559842/d473fc6f-52ae-491d-99b0-c024bbcc6429" alt="영화 검색" />
     </td>
-    <td>
-      <img src="https://github.com/MOBI-BattleTalk/BattleTalk/assets/125418818/7e6fd565-bd1f-4768-97ee-45b84908d991" alt="배틀 참가" />
-    </td>
+    
   </tr>
    </tr>
    <tr>
     <th>
-      배틀 생성
+      영화 검색
     </th>
-    <th>
-      배틀 참여
-    </th>
+    
   </tr>
 </table>
 
