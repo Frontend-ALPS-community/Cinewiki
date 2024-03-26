@@ -1,71 +1,156 @@
-<div align="middle">
- 서비스 로고 이미지 자리 
+<div align="center">
 
-<br />
-  <h1 style="color:#0076be">Cinewiki(씨네위키) </h1>
-  설명한줄
-<br />
-<br />
-<h2>프로젝트 소개 🖥️ </h2>
-movie open api를 활용한 정보 공유 서비스 페이지입니다. <br />
-서비스프로젝트 소개 .
+## 영화에 대한 모든 정보는 <br/> Cinewiki (씨네위키)
 
-<h2>🕛 개발 기간</h2>
-24.02.28 ~ 24.03.13
-
-<h2>문서화 📝</h2>
-
-[Figma](https://www.figma.com/file/LStbG51DcKnzpWTxhNrTyZ/TS-MovieTrailer?type=design&mode=design&t=uF6Sgnh7Md96qyhm-1)
-
-<h2>주요 기능 🔨</h2>
-
-<div align="left">
-<p>1. OPEN API를 활용한 데이터 패칭</p>
-<p>2. Storybook을 통해 재사용 가능한 컴포넌트 분리</p>
-<p>3. 페이지네이션 및 옵션 분류 기능</p>
-<p>4. 넥스트 마크다운 언어를 활용한 블로그 게시글 생성</p>
-<p>5. json-server를 통해 생성한 데이터 및 api 주소를 활용한 댓글 추가 삭제 조회 기능</p> 
-<p>6. jotai를 활용한 상태 관리</p>
-<p>7. next-auth를 이용한 로그인 기능 구현<p>
-</div>
-
-<h2>시현 영상 🎥</h2>
-
-<div align="left">
-
-1. 메인 화면 및 슬라이드 기능 
-
-2. 로그인 기능 <br/>
-
-3. 행사 모아보기 페이지네이션 + select + 상세페이지
-
-4. 블로그 조회 
-
-5. 댓글 유효성 검사 및 추가
-
-6. 댓글 삭제
-
+<img src="https://github.com/nasilKiM/nasilKiM/assets/117559842/d665b774-4799-4967-ad78-920d12876836" width="400px"/>
 
 </div>
-<h2>팀원 </h2>
 
+### 💫 프로젝트 소개
 
+---
 
-<h2 align='center'>프로젝트 기술스택 💡</h2>
+- 영화를 의미하는 "cinema🎞️"와 “빠른⚡”을 의미하는"wiki"를 합성하여 만든 "Cinewiki"는 영화에 대한 정보를 다양한 메뉴를 통해 확인 할 수 있는 서비스입니다.
 
-#### 프론트엔드 ⚙️
+### 📝 지원 기능
 
-| 스택                                                                                                                                                                                                              | 사용            |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------- |
-| <img src="https://img.shields.io/badge/Next-000000?style=for-the-badge&logo=Next.js&logoColor=white">                                                                                                             | 넥스트          |
-| <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white">                                                                                                    | 언어            |
-| <img src="https://img.shields.io/badge/Jotai-171717?style=for-the-badge&logo=Jotai&logoColor=black">                                                                                                              | 상태 관리       |
-| <img src="https://img.shields.io/badge/reacthookform-EC5990?style=for-the-badge&logo=reacthookform&logoColor=white">                                                                                              | 유효성 검사     |
-| <img src="https://img.shields.io/badge/tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white">                                                                                                     | CSS 스타일      |
-| <img src="https://img.shields.io/badge/shadcn/ui-000000?style=for-the-badge&logo=shadcn/ui&logoColor=white">                                                                                                      | 디자인 컴포넌트 |
-| <img src="https://img.shields.io/badge/fontawesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white">                                                                                                  | 아이콘          |
-| <img src="https://img.shields.io/badge/json:server-ECD53F?style=for-the-badge&logo=json&logoColor=white">                                                                                                         | 서버            |
-| <img src="https://img.shields.io/badge/Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white">                                                                                                      | 공용 컴포넌트   |
-| <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white"> | 협업툴          |
-| <img src="https://img.shields.io/badge/mdx-1B1F24?style=for-the-badge&logo=mdx&logoColor=white">                                                                                                                  | 마크다운 언어   |
+- 영화 정보 조회 (공용 모달처리)
+- 영화 리스트 보기 (무한 스크롤)
+- 영화 검색 기능
 
+### 📅프로젝트 기한 및 내용
+
+2024.2.28 ~ 2024.3.13 (+이후 리팩토링 진행)
+
+### 😄 팀원 구성
+
+<div align="center">
+    <table style="margin-left: auto; margin-right: auto;">
+      <tr>
+        <td>
+            <a href="https://github.com/YoungSeungJang">
+        <img src="https://github.com/Frontend-ALPS-community/.github/assets/50819030/6e06bc2c-5870-4ee7-89d5-d786f5695661" width="120px" height="120px"/>
+      </a>
+        </td>
+        <td>
+              <a href="https://github.com/JaeHoonKOR">
+        <img src="https://github.com/Frontend-ALPS-community/.github/assets/117559842/e1f0d23a-ae45-4e77-a846-20eaad2fbf48" width="120px" height="120px"/>
+      </a> 
+        </td>
+        <td>
+         <a href="https://github.com/nasilKiM">
+        <img src="https://github.com/Frontend-ALPS-community/.github/assets/117559842/e07e8b17-d51f-4e43-a9fe-dba8d80cf199" width="120px" height="120px"/>
+      </a>  
+        </td>
+      </tr>
+      <tr>
+        <th>장영승</th>
+        <th>이재훈</th>
+        <th>김나실</th>
+      </tr>
+      <tr>
+        <th style="color:dodgerblue">Frontend</th>
+        <th style="color:dodgerblue">Frontend</th>
+        <th style="color:dodgerblue">Frontend</th>
+      </tr>
+ <tr>
+        <th>레이아웃,검색,무한스크롤</th>
+        <th>상세페이지</th>
+        <th>메인페이지,modal</th>
+      </tr>
+    </table>
+</div>
+
+<br/>
+
+### 🎥 주요 기능 영상
+
+<table style="text-align: center">
+  <tr>
+    <td>
+      <img src="https://github.com/MOBI-BattleTalk/BattleTalk/assets/125418818/08b6d4e1-6bba-4c35-840f-02fe7f7d3a24" alt="회원가입/로그인" />
+    </td>
+    <td>
+      <img src="https://github.com/MOBI-BattleTalk/BattleTalk/assets/125418818/c0f982b7-218e-4e8b-8103-17f545a3efe2" alt="닉네임 변경" />
+    </td>
+  </tr>
+   <tr>
+    <th>
+      회원가입/로그인
+    </th>
+    <th>
+      닉네임 변경
+    </th>
+  </tr>
+ <tr>
+    <td>
+      <img src="https://github.com/MOBI-BattleTalk/BattleTalk/assets/125418818/3a1c281d-acf5-445e-9fa7-e3e97400fdfa" alt="배틀 업로드" />
+    </td>
+    <td>
+      <img src="https://github.com/MOBI-BattleTalk/BattleTalk/assets/125418818/7e6fd565-bd1f-4768-97ee-45b84908d991" alt="배틀 참가" />
+    </td>
+  </tr>
+   </tr>
+   <tr>
+    <th>
+      배틀 생성
+    </th>
+    <th>
+      배틀 참여
+    </th>
+  </tr>
+</table>
+
+<br/>
+
+### 📊 Stacks
+
+| Environment                                                                                                       | 사용                                 |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| Communication                                                                                                     |                                      |
+| <img src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=white">              | gitHub                               |
+| <img src="https://img.shields.io/badge/discord-5865F2?style=flat-square&logo=discord&logoColor=white">            | discord                              |
+| ![Static Badge](https://img.shields.io/badge/Notion%20-%20lightgrey)                                              | Notion                               |
+| tools                                                                                                             |                                      |
+| <img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white">                | 디자인                               |
+| ![Static Badge](https://img.shields.io/badge/Linear%20-%20darkblue)                                               | 리니어                               |
+| ![Static Badge](https://img.shields.io/badge/draw.io%20-%20orange)                                                | 조직도 툴                            |
+| <img src="https://img.shields.io/badge/NPM-CB3837?style=flat-square&logo=npm&logoColor=white">                    | Config                               |
+| Language                                                                                                          |                                      |
+| ![Static Badge](https://img.shields.io/badge/TypeScript-skyblue)                                                  | 타입스크립트                         |
+| Library                                                                                                           |                                      |
+| <img src="https://img.shields.io/badge/React%20Query-FF4154?style=flat-square&logo=reactquery&logoColor=white">   | api call, 백엔드 데이터 연결 및 관리 |
+| <img src="https://img.shields.io/badge/React%20Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white"> | 라우팅 연결                          |
+| <img src="https://img.shields.io/badge/Recoil-blue">                                                              | 전역 상태 관리                       |
+
+### 📝 Convention
+
+| 표기     | 표기 사용 상황                                                             |
+| -------- | -------------------------------------------------------------------------- |
+| Feat     | 새로운 기능의 추가                                                         |
+| Remove   | 파일 삭제                                                                  |
+| Chore    | 빌드 업무 수정, 패키지 매니저 수정(ex .gitignore 수정 같은 경우)           |
+| Fix      | 버그 수정                                                                  |
+| docs     | 문서 수정                                                                  |
+| Rename   | 파일 이름 변경                                                             |
+| Style    | 스타일 관련 기능(코드 포맷팅, 세미콜론 누락, 코드 자체의 변경이 없는 경우) |
+| Refactor | 코드 리펙토링                                                              |
+
+<br/><br/>
+
+### 📌 기획과정
+
+#### 디자인 - Figma
+
+- 원만한 디자인 개발과 공유를 위해 Figma에서 디자인과 기획 작업을 진행하였습니다.
+- <a href="https://www.figma.com/file/PVshVh0YCiJQflgeEhQYfP/BattleTalk?type=design&node-id=0-1&mode=design&t=ft7NYid10lnXTmWD-0">피그마 링크</a>
+
+<img width="400px" alt="스크린샷 2024-02-02 오후 6 42 09" src="https://github.com/MOBI-BattleTalk/BattleTalk/assets/125418818/4f472221-489d-4238-9c19-9bcec2b1e967">
+
+#### Github 협업
+
+- 깃허브를 이용하면 깃허브에서 제공하는 다양한 협업 방식을 사용할 수 있습니다.
+- Pull request시 사용할 수 있는 라벨 - 현재의 요청이 어떤 상태인지 표시할 수 있습니다.
+  ![image](https://github.com/MOBI-BattleTalk/BattleTalk/assets/110034416/4e1608b2-4357-4397-99e9-804536944d0b)
+
+  <br />
