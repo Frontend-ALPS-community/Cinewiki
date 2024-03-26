@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+<div align="middle">
+ 서비스 로고 이미지 자리 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
+  <h1 style="color:#0076be">Cinewiki(씨네위키) </h1>
+  설명한줄
+<br />
+<br />
+<h2>프로젝트 소개 🖥️ </h2>
+movie open api를 활용한 정보 공유 서비스 페이지입니다. <br />
+서비스프로젝트 소개 .
 
-## Available Scripts
+<h2>🕛 개발 기간</h2>
+24.02.28 ~ 24.03.13
 
-In the project directory, you can run:
+<h2>문서화 📝</h2>
 
-### `npm start`
+[Figma](https://www.figma.com/file/LStbG51DcKnzpWTxhNrTyZ/TS-MovieTrailer?type=design&mode=design&t=uF6Sgnh7Md96qyhm-1)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h2>주요 기능 🔨</h2>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<div align="left">
+<p>1. OPEN API를 활용한 데이터 패칭</p>
+<p>2. Storybook을 통해 재사용 가능한 컴포넌트 분리</p>
+<p>3. 페이지네이션 및 옵션 분류 기능</p>
+<p>4. 넥스트 마크다운 언어를 활용한 블로그 게시글 생성</p>
+<p>5. json-server를 통해 생성한 데이터 및 api 주소를 활용한 댓글 추가 삭제 조회 기능</p> 
+<p>6. jotai를 활용한 상태 관리</p>
+<p>7. next-auth를 이용한 로그인 기능 구현<p>
+</div>
 
-### `npm test`
+<h2>시현 영상 🎥</h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div align="left">
 
-### `npm run build`
+1. 메인 화면 및 슬라이드 기능 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. 로그인 기능 <br/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. 행사 모아보기 페이지네이션 + select + 상세페이지
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. 블로그 조회 
 
-### `npm run eject`
+5. 댓글 유효성 검사 및 추가
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+6. 댓글 삭제
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+</div>
+<h2>팀원 </h2>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<h2 align='center'>프로젝트 기술스택 💡</h2>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### 프론트엔드 ⚙️
+
+| 스택                                                                                                                                                                                                              | 사용            |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------- |
+| <img src="https://img.shields.io/badge/Next-000000?style=for-the-badge&logo=Next.js&logoColor=white">                                                                                                             | 넥스트          |
+| <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white">                                                                                                    | 언어            |
+| <img src="https://img.shields.io/badge/Jotai-171717?style=for-the-badge&logo=Jotai&logoColor=black">                                                                                                              | 상태 관리       |
+| <img src="https://img.shields.io/badge/reacthookform-EC5990?style=for-the-badge&logo=reacthookform&logoColor=white">                                                                                              | 유효성 검사     |
+| <img src="https://img.shields.io/badge/tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white">                                                                                                     | CSS 스타일      |
+| <img src="https://img.shields.io/badge/shadcn/ui-000000?style=for-the-badge&logo=shadcn/ui&logoColor=white">                                                                                                      | 디자인 컴포넌트 |
+| <img src="https://img.shields.io/badge/fontawesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white">                                                                                                  | 아이콘          |
+| <img src="https://img.shields.io/badge/json:server-ECD53F?style=for-the-badge&logo=json&logoColor=white">                                                                                                         | 서버            |
+| <img src="https://img.shields.io/badge/Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white">                                                                                                      | 공용 컴포넌트   |
+| <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white"> | 협업툴          |
+| <img src="https://img.shields.io/badge/mdx-1B1F24?style=for-the-badge&logo=mdx&logoColor=white">                                                                                                                  | 마크다운 언어   |
+
