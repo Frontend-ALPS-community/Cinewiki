@@ -103,50 +103,33 @@
 
 | Environment                                                                                                       | 사용                                 |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| Communication                                                                                                     |                                      |
+| [ Communication ]                                                                                                 |                                      |
 | <img src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=white">              | gitHub                               |
 | <img src="https://img.shields.io/badge/discord-5865F2?style=flat-square&logo=discord&logoColor=white">            | discord                              |
 | ![Static Badge](https://img.shields.io/badge/Notion%20-%20lightgrey)                                              | Notion                               |
-| tools                                                                                                             |                                      |
+| [ tools ]                                                                                                         |                                      |
 | <img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white">                | 디자인                               |
-| ![Static Badge](https://img.shields.io/badge/Linear%20-%20darkblue)                                               | 리니어                               |
-| ![Static Badge](https://img.shields.io/badge/draw.io%20-%20orange)                                                | 조직도 툴                            |
 | <img src="https://img.shields.io/badge/NPM-CB3837?style=flat-square&logo=npm&logoColor=white">                    | Config                               |
-| Language                                                                                                          |                                      |
+| [ Language ]                                                                                                      |                                      |
 | ![Static Badge](https://img.shields.io/badge/TypeScript-skyblue)                                                  | 타입스크립트                         |
-| Library                                                                                                           |                                      |
+| [ Library ]                                                                                                       |                                      |
 | <img src="https://img.shields.io/badge/React%20Query-FF4154?style=flat-square&logo=reactquery&logoColor=white">   | api call, 백엔드 데이터 연결 및 관리 |
 | <img src="https://img.shields.io/badge/React%20Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white"> | 라우팅 연결                          |
 | <img src="https://img.shields.io/badge/Recoil-blue">                                                              | 전역 상태 관리                       |
-
-### 📝 Convention
-
-| 표기     | 표기 사용 상황                                                             |
-| -------- | -------------------------------------------------------------------------- |
-| Feat     | 새로운 기능의 추가                                                         |
-| Remove   | 파일 삭제                                                                  |
-| Chore    | 빌드 업무 수정, 패키지 매니저 수정(ex .gitignore 수정 같은 경우)           |
-| Fix      | 버그 수정                                                                  |
-| docs     | 문서 수정                                                                  |
-| Rename   | 파일 이름 변경                                                             |
-| Style    | 스타일 관련 기능(코드 포맷팅, 세미콜론 누락, 코드 자체의 변경이 없는 경우) |
-| Refactor | 코드 리펙토링                                                              |
-
-<br/><br/>
+| <img src="https://img.shields.io/badge/Recoil-blue">                                                              | 전역 상태 관리                       |
+| <img src="https://img.shields.io/badge/Recoil-blue">                                                              | 전역 상태 관리                       |
 
 ### 📌 기획과정
 
 #### 디자인 - Figma
 
-- 원만한 디자인 개발과 공유를 위해 Figma에서 디자인과 기획 작업을 진행하였습니다.
+- 화면 디자인 개발과 원활한 협업를 위해 Figma에서 디자인과 기획 작업을 진행하였습니다.
 - <a href="https://www.figma.com/file/PVshVh0YCiJQflgeEhQYfP/BattleTalk?type=design&node-id=0-1&mode=design&t=ft7NYid10lnXTmWD-0">피그마 링크</a>
 
-<img width="400px" alt="스크린샷 2024-02-02 오후 6 42 09" src="https://github.com/MOBI-BattleTalk/BattleTalk/assets/125418818/4f472221-489d-4238-9c19-9bcec2b1e967">
+![alt text](image.png)
 
 #### Github 협업
 
-- 깃허브를 이용하면 깃허브에서 제공하는 다양한 협업 방식을 사용할 수 있습니다.
-- Pull request시 사용할 수 있는 라벨 - 현재의 요청이 어떤 상태인지 표시할 수 있습니다.
-  ![image](https://github.com/MOBI-BattleTalk/BattleTalk/assets/110034416/4e1608b2-4357-4397-99e9-804536944d0b)
+- Pull request > PR Review(팀원 전원 Approve) > Merge 방식으로 진행
 
   <br />
