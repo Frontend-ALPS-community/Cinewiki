@@ -99,25 +99,24 @@
 
 <br/>
 
-### 📊 Stacks
+<h3>⚙️ 사용 기술 스택</h3>
 
-| Environment                                                                                                       | 사용                                 |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| [ Communication ]                                                                                                 |                                      |
-| <img src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=white">              | gitHub                               |
-| <img src="https://img.shields.io/badge/discord-5865F2?style=flat-square&logo=discord&logoColor=white">            | discord                              |
-| ![Static Badge](https://img.shields.io/badge/Notion%20-%20lightgrey)                                              | Notion                               |
-| [ tools ]                                                                                                         |                                      |
-| <img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white">                | 디자인                               |
-| <img src="https://img.shields.io/badge/NPM-CB3837?style=flat-square&logo=npm&logoColor=white">                    | Config                               |
-| [ Language ]                                                                                                      |                                      |
-| ![Static Badge](https://img.shields.io/badge/TypeScript-skyblue)                                                  | 타입스크립트                         |
-| [ Library ]                                                                                                       |                                      |
-| <img src="https://img.shields.io/badge/React%20Query-FF4154?style=flat-square&logo=reactquery&logoColor=white">   | api call, 백엔드 데이터 연결 및 관리 |
-| <img src="https://img.shields.io/badge/React%20Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white"> | 라우팅 연결                          |
-| <img src="https://img.shields.io/badge/Recoil-blue">                                                              | 전역 상태 관리                       |
-| <img src="https://img.shields.io/badge/Recoil-blue">                                                              | 전역 상태 관리                       |
-| <img src="https://img.shields.io/badge/Recoil-blue">                                                              | 전역 상태 관리                       |
+![React](https://img.shields.io/badge/react-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black)
+<img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+<img src="https://img.shields.io/badge/reactquery-FF4154?style=for-the-badge&logo=reactquery&logoColor=black">  
+<img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white">
+<img src="https://img.shields.io/badge/Framer-0055FF?style=for-the-badge&logo=Framer&logoColor=white">
+<img src="https://img.shields.io/badge/slick-3498DB?style=for-the-badge&logo=slick&logoColor=white">
+<img src="https://img.shields.io/badge/day.js-fb6052?style=for-the-badge&logo=day.js&logoColor=black">
+<img src="https://img.shields.io/badge/reactyoutube-FF0000?style=for-the-badge&logo=youtube&logoColor=white">
+
+<h3>👥 사용 협업툴</h3>
+<img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white">
+<img src="https://img.shields.io/badge/Prettier-2D9FD9?style=for-the-badge&logo=Prettier&logoColor=black">
+<img src="https://img.shields.io/badge/husky-ED1C24?style=for-the-badge&logo=husky&logoColor=black">
+<img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
+<img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
+<br>
 
 ### 📌 기획과정
 
