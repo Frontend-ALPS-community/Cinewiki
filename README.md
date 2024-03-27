@@ -124,7 +124,7 @@
 #### 디자인 - Figma
 
 - 화면 디자인 개발과 원활한 협업를 위해 Figma에서 디자인과 기획 작업을 진행하였습니다.
-- <a href="https://www.figma.com/file/PVshVh0YCiJQflgeEhQYfP/BattleTalk?type=design&node-id=0-1&mode=design&t=ft7NYid10lnXTmWD-0">피그마 링크</a>
+- <a href="https://www.figma.com/file/LStbG51DcKnzpWTxhNrTyZ/TS-MovieTrailer?type=design&node-id=0%3A1&mode=design&t=NbVgc7WKew1sh85Y-1">피그마 링크</a>
 
 ![alt text](image.png)
 
