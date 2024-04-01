@@ -70,6 +70,7 @@ module.exports = {
     },
   },
   plugins: [],
+  darkMode: 'class',
   corePlugins: {
     preflight: true,
   },

@@ -4,6 +4,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { Nav, NavBar } from '../../types/type'
 import { Search } from '../Icons/search'
 import UnderLine from '../Underline/underline'
+import DarkModeToggle from '../DarkmodeToggle/darkmodeToggle'
 
 const Layout = () => {
   // 조건부스타일
@@ -13,6 +14,7 @@ const Layout = () => {
   const [selected, setSelected] = useState<NavBar>(Nav[0])
   const [preItem, setPreItem] = useState<NavBar>(Nav[0])
   const inputRef = useRef<HTMLInputElement>(null)
+  const [darkMode, setDarkMode] = useState(false)
 
   const onClickBtn = (path: string) => {
     navigate(path)
@@ -23,9 +25,16 @@ const Layout = () => {
     window.location.reload()
   }
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
+
   return (
     <div className="">
       {/* 딤드 */}
+      <div className={darkMode ? 'dark' : 'light'}>
+        <DarkModeToggle darkmode={darkMode} toggleDarkMode={toggleDarkMode} />
+      </div>
       <AnimatePresence>
         {isOpen && (
           <motion.div
