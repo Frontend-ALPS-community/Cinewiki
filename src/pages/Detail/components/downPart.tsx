@@ -8,7 +8,17 @@ import { IMAGE_URL } from '../../../utils/ImageURL'
 const DownPart = () => {
   const { id } = useParams()
   const [gridHeight, setGridHeight] = useState('240px')
+  const [isExpanded, setIsExpanded] = useState(false)
   const { data } = useMovieCredits(Number(id))
+
+  const handleToggleClick = () => {
+    if (isExpanded) {
+      setGridHeight('240px')
+    } else {
+      setGridHeight('480px')
+    }
+    setIsExpanded(!isExpanded)
+  }
 
   return (
     <div className="  w-content mx-auto">
@@ -29,7 +39,7 @@ const DownPart = () => {
       )}
 
       <div className="grid place-items-center">
-        <MoreBtn gridHeight={gridHeight} setGridHeight={setGridHeight} />
+        <MoreBtn onClick={handleToggleClick} isExpanded={isExpanded} />
       </div>
     </div>
   )
