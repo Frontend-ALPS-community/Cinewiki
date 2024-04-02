@@ -29,16 +29,16 @@ const UpperPart = () => {
             <img src={posterURL} className=" h-full rounded-[10px]" />
           </div>
 
-          <div className="ml-[21px] flex items-center text-center my-5 gap-7">
-            <div className="text-[32px] font-bold ">{data?.title}</div>
-            <div className="">
+          <div className="ml-[21px] flex flex-col items-left my-5">
+            <div className="text-[32px] font-bold mt-3 mb-5">{data?.title}</div>
+            <div className="flex justify-left">
               {data?.genres.map((item: genre) => (
-                <span
+                <div
                   key={item.id}
-                  className="mr-3 cursor-pointer text-[16px] text-gray-300 border-2 px-3 py-2 rounded-3xl"
+                  className="mr-3 cursor-pointer text-[16px] text-gray-300 border-2 border-teal-200	px-3 py-2 rounded-3xl hover:bg-teal-200"
                 >
                   #{item.name}
-                </span>
+                </div>
               ))}
             </div>
           </div>
